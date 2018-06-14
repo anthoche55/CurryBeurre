@@ -26,6 +26,14 @@ if(message.content.startsWith("ggl!blague")) {
 	.setTimestamp()
 message.channel.send({embed});
 }
+	
+	if(message.content.startsWith("ggl!heure")) {
+	const embed = new Discord.RichEmbed()
+	.setTitle("Il est :")
+	.setColor(0x00AE86)
+	.setTimestamp()
+message.channel.send({embed});
+}
     
 });
 
