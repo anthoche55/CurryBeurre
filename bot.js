@@ -18,7 +18,7 @@ client.on('message', message => {
     
     var randomAnswer = answers[Math.floor(Math.random() * answers.length)];
 
-message.channel.startsWith("ggl!blague")) {
+if(message.content.startsWith("ggl!blague")) {
 	message.channel.send(randomAnswer);
 }
     
