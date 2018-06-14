@@ -22,7 +22,7 @@ if(message.content.startsWith("ggl!blague")) {
 	const embed = new Discord.RichEmbed()
 	.setTitle("Une blague ? C'est parti")
 	.setColor(0x00AE86)
-	.addField(randomAnswer, "")
+	.addField(randomAnswer, "Google Home")
 	.setTimestamp()
 message.channel.send({embed});
 }
