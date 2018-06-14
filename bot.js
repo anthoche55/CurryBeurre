@@ -19,7 +19,10 @@ client.on('message', message => {
     var randomAnswer = answers[Math.floor(Math.random() * answers.length)];
 
 if(message.content.startsWith("ggl!blague")) {
-	message.channel.send(randomAnswer);
+	const embed = new Discord.RichEmbed()
+	.setTitle("Une blague ? C'est parti")
+	.addField(randomAnswer)
+message.channel.send({embed});.channel.send(randomAnswer
 }
     
 });
