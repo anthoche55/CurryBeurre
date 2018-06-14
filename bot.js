@@ -22,7 +22,7 @@ if(message.content.startsWith("ggl!blague")) {
 	const embed = new Discord.RichEmbed()
 	.setTitle("Une blague ? C'est parti")
 	.addField(randomAnswer)
-message.channel.send({embed});.channel.send(randomAnswer
+message.channel.send({embed});
 }
     
 });
