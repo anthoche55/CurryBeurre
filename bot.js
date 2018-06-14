@@ -9,6 +9,19 @@ client.on('message', message => {
     if (message.content === 'ping') {
     	message.reply('pong');
   	}
+    
+    var answers = [
+  "Comment faire pleurer un plombier ? En tuant toute sa famille.",
+  "C'est l'histoire du ptit dej, vous la connaissez ? Pas de bol.",
+  "Un monsieur visite un musée. Soudain il s'arrête et dit au guide :  \n- Ah, c'est moche ! \n- C'est du Picasso, répond le guide. \nPlus loin, il s'écrie de nouveau : \n- Ah, c'est vraiment moche ! \n- Ca Monsieur, c'est un miroir !"
+]
+    
+    var randomAnswer = answers[Math.floor(Math.random() * answers.length)];
+
+message.channel.startsWith("ggl!blague")) {
+	message.channel.send(randomAnswer);
+}
+    
 });
 
 // THIS  MUST  BE  THIS  WAY
