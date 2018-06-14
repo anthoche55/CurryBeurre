@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const prefix = "!ok google";
 const client = new Discord.Client();
 
 client.on('ready', () => {
@@ -18,7 +19,7 @@ client.on('message', message => {
     
     var randomAnswer = answers[Math.floor(Math.random() * answers.length)];
 
-if(message.content.startsWith("ggl!blague")) {
+if(message.content.startsWith(prefix + "blague")) {
 	const embed = new Discord.RichEmbed()
 	.setTitle("Une blague ? C'est parti")
 	.setColor(0x00AE86)
@@ -27,7 +28,7 @@ if(message.content.startsWith("ggl!blague")) {
 message.channel.send({embed});
 }
 	
-	if(message.content.startsWith("ggl!heure")) {
+	if(message.content.startsWith(prefix + "heure")) {
 	const embed = new Discord.RichEmbed()
 	.setTitle("Il est :")
 	.setColor(0x00AE86)
