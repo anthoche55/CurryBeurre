@@ -20,7 +20,7 @@ client.on('message', message => {
 
 if(message.content.startsWith("ggl!blague")) {
 	const embed = new Discord.RichEmbed()
-	.setTitle("Une blague ? C'est parti")
+	.setAuthor("Une blague ? C'est parti")
 	.addField(randomAnswer)
 	.setTimestamp()
 message.channel.send({embed});
