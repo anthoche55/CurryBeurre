@@ -46,11 +46,11 @@ if(message.content.startsWith(prefix + "google")) {
     let google = args.slice(1).join('+');
     let link = `https://www.google.com/search?q=` + google;
     	const embed = new Discord.RichEmbed()
-	.setTitle("Recherche Google :")
-	.setColor(0x00AE86)
-	.addField(link, "Google Home")
-	.setTimestamp()
-	message.channel.send(embed);
+		.setTitle("Recherche Google :")
+		.setColor(0x00AE86)
+		.addField(link, "Google Home")
+		.setTimestamp()
+	message.channel.send({embed});
 }
     
 if(message.content.startsWith(prefix + "youtube")) {
@@ -61,10 +61,9 @@ if(message.content.startsWith(prefix + "youtube")) {
 	.setColor(0x00AE86)
 	.addField(link, "Google Home")
 	.setTimestamp()
-	message.channel.send(embed);
+	message.channel.send({embed});
 }
     
 });
 
-// THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
