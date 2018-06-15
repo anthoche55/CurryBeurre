@@ -45,23 +45,13 @@ var args = message.content.slice(prefix.length).trim().split(/ +/g);
 if(message.content.startsWith(prefix + "google")) {
     let google = args.slice(1).join('+');
     let link = `https://www.google.com/search?q=` + google;
-    	const embed = new Discord.RichEmbed()
-		.setTitle("Recherche Google :")
-		.setColor(0x00AE86)
-		.addField(link, "Google Home")
-		.setTimestamp()
-	message.channel.send({embed});
+	message.channel.send(link);
 }
     
 if(message.content.startsWith(prefix + "youtube")) {
     let youtube = args.slice(1).join('+');
     let link = `https://www.youtube.com/results?search_query=` + youtube;
-    	const embed = new Discord.RichEmbed()
-	.setTitle("Recherche YouTube :")
-	.setColor(0x00AE86)
-	.addField(link, "Google Home")
-	.setTimestamp()
-	message.channel.send({embed});
+	message.channel.send(link);
 }
     
 });
