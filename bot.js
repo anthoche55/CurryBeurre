@@ -15,10 +15,10 @@ client.on('message', message => {
   "Comment faire pleurer un plombier ? En tuant toute sa famille.",
   "C'est l'histoire du ptit dej, vous la connaissez ? Pas de bol.",
   "Un monsieur visite un musée. Soudain il s'arrête et dit au guide :  \n- Ah, c'est moche ! \n- C'est du Picasso, répond le guide. \nPlus loin, il s'écrie de nouveau : \n- Ah, c'est vraiment moche ! \n- Ca Monsieur, c'est un miroir !",
-  "C'est l'histoire du nain aux 26 enfants. /nElle est courte mais elle est bonne.",
-  "C'est l'histoire d'un pingouin qui respire par les fesses. /nUn jour il s’assoit et il meurt.",
-  "Un fils demande à son père : /n- Papa,c'est quoi la beauté? /n- Tu vois ta mère ? /n- Oui /n- Et ben c'est pas ça!",
-  "Un chien et un homme son sur un bateau. Le chien pète, l'homme tombe à l'eau et se noie. Quelle est la race du chien ? /nUn pékinois. (un pet qui noie)"
+  "C'est l'histoire du nain aux 26 enfants. \nElle est courte mais elle est bonne.",
+  "C'est l'histoire d'un pingouin qui respire par les fesses. \nUn jour il s’assoit et il meurt.",
+  "Un fils demande à son père : \n- Papa,c'est quoi la beauté? \n- Tu vois ta mère ? \n- Oui \n- Et ben c'est pas ça!",
+  "Un chien et un homme son sur un bateau. Le chien pète, l'homme tombe à l'eau et se noie. Quelle est la race du chien ? \nUn pékinois. (un pet qui noie)"
 ]
     
     var randomAnswer = answers[Math.floor(Math.random() * answers.length)];
