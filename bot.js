@@ -50,6 +50,7 @@ if(message.content.startsWith(prefix + "google")) {
 	.setColor(0x00AE86)
 	.addField(link, "Google Home")
 	.setTimestamp()
+	message.channel.send(embed);
 }
     
 if(message.content.startsWith(prefix + "youtube")) {
@@ -60,6 +61,7 @@ if(message.content.startsWith(prefix + "youtube")) {
 	.setColor(0x00AE86)
 	.addField(link, "Google Home")
 	.setTimestamp()
+	message.channel.send(embed);
 }
     
 });
