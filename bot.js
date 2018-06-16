@@ -53,6 +53,24 @@ if(message.content.startsWith(prefix + "youtube")) {
     let link = `https://www.youtube.com/results?search_query=` + youtube;
 	message.channel.send(link);
 }
+	
+	if (message.content.startsWith(prefix + "help")) {
+		message.channel.send("Je vous ai envoyé un message en message privé. Marquez --hhelp pour envoyer ce message dans ce salon.")
+		const embed = new Discord.RichEmbed()
+		.setColor(0x954D23)
+		.setTitle("Command List:")
+		.addField("!ok google help", "Cette commande/this command")
+		.addBlankField(true)
+		.addField("!ok google blague", "Raconter une blague/Tell you a joke")
+		.addBlankField(true)
+		.addField("!ok google heure", "Donner l'heure actuelle/Gives you the time")
+		.addBlankField(true)
+		.addField("!ok google google", "Cherche votre argument sur Google/Search your argument on Google")
+		.addBlankField(true)
+		.addField("!ok google youtube", "Chercher votre argument sur YouTube/Search your argument on Youtube")
+		.
+		message.author.send({embed})
+	}
     
 });
 
