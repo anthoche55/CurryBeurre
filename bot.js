@@ -71,6 +71,25 @@ if(message.content.startsWith(prefix + "youtube")) {
 		
 		message.author.send({embed})
 	}
+	
+	if (message.content.startsWith(prefix + "hhelp")) {
+		const embed = new Discord.RichEmbed()
+		.setColor(0x954D23)
+		.setTitle("Command List:")
+		.addField("!ok google help", "Cette commande/this command")
+		.addBlankField(true)
+		.addField("!ok google blague", "Raconter une blague/Tell you a joke")
+		.addBlankField(true)
+		.addField("!ok google heure", "Donner l'heure actuelle/Gives you the time")
+		.addBlankField(true)
+		.addField("!ok google google", "Cherche votre argument sur Google/Search your argument on Google")
+		.addBlankField(true)
+		.addField("!ok google youtube", "Chercher votre argument sur YouTube/Search your argument on YouTube")
+		.addBlankField(true)
+		.addField("Autres/Others", "D\'autres commandes doivent venirs/Other commands will be come later.")
+		
+		message.channel.send({embed})
+	}
     
 });
 
