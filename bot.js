@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const prefix = "!ok google ";
+const prefix = "cb!";
 const client = new Discord.Client();
 
 client.on('ready', () => {
