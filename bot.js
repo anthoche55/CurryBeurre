@@ -68,7 +68,7 @@ if(message.content.startsWith(prefix + "youtube")) {
 		.addField("!ok google google", "Cherche votre argument sur Google/Search your argument on Google")
 		.addBlankField(true)
 		.addField("!ok google youtube", "Chercher votre argument sur YouTube/Search your argument on Youtube")
-		.
+		
 		message.author.send({embed})
 	}
     
