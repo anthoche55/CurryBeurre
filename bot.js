@@ -111,7 +111,7 @@ if(message.content.startsWith(prefix + "youtube")) {
           client.channels.findAll('name', 'u-chat').map(channel => channel.send({embed}))
           message.delete();
 }
-	if(message.content.startsWith(prefix + "chaton")) {
+	if(message.content.startsWith(prefix + "meow")) {
                    try {
                     get('https://aws.random.cat/meow').then(res => {
                         var replys = [
@@ -135,7 +135,7 @@ if(message.content.startsWith(prefix + "youtube")) {
                         return message.channel.send({embed});
                     });
                 } catch(err) {
-                    return message.channel.send(error.stack);
+                    return message.channel.send("Erreure...");
                 }
 }
     
