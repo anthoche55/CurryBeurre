@@ -133,7 +133,7 @@ if(message.content.startsWith(prefix + "youtube")) {
 		try {
 			get('https://aws.random.cat/meow').then(res => {
 				const embed = new Discord.RichEmbed()
-				.setTitle(":meow: Un chat sauvage apparaît")
+				.setTitle(":smiley_cat: Un chat sauvage apparaît")
 				.setImage(res.body.file)
 				.setColor("0x88CC14")
 				return message.channel.send({embed});
