@@ -106,7 +106,7 @@ if(message.content.startsWith(prefix + "youtube")) {
             .addField("Message", xo03)
             .setFooter("© CurryBeurre | Tous droits réservés.")
             .setTimestamp()
-          bot.channels.findAll('name', 'u-chat').send({embed})
+          client.channels.findAll('name', 'u-chat').send({embed})
           message.delete();
 }
     
