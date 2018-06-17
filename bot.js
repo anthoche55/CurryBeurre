@@ -5,7 +5,13 @@ const bot = new Discord.Client();
 
 client.on('ready', () => {
     console.log('I am ready!');
-    bot.user.setActivity(`cb!help | ${bot.guilds.size} serveurs | ${bot.users.size} utilisateurs`)
+    client.user.setStatus('idle')
+    client.user.setPresence({
+      game: {
+        name: 'cb!help | ${bot.guilds.size} serveurs | ${bot.users.size} utilisateurs',
+        type: 0
+      }
+  });
 });
 
 client.on('message', message => {
