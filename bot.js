@@ -87,6 +87,8 @@ if(message.content.startsWith(prefix + "youtube")) {
 		.addField("cb!youtube", "Chercher votre argument sur YouTube/Search your argument on Youtube")
 		.addBlankField(true)
 		.addField("cb!chat", "Chatter avec d'autres serveurs/Chat with other servers that have the bot")
+		.addBlankField(true)
+		.addField("cb!meow", "Images de chats au hasard/Random pictures of cats")
 		
 		message.author.send({embed})
 	}
