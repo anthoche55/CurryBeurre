@@ -8,7 +8,7 @@ client.on('ready', () => {
     client.user.setStatus('idle')
     client.user.setPresence({
       game: {
-        name: 'cb!help | ${client.guilds.size} serveurs | ${client.users.size} utilisateurs',
+        name: 'cb!help | By Cecemel_PvP',
         type: 0
       }
   });
