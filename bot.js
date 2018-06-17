@@ -3,6 +3,7 @@ const prefix = "cb!";
 const client = new Discord.Client();
 const bot = new Discord.Client();
 const { get } = require("snekfetch"); 
+const randomPuppy = require('random-puppy');
 
 client.on('ready', () => {
     console.log('I am ready!');
@@ -146,6 +147,31 @@ if(message.content.startsWith(prefix + "youtube")) {
 			return message.channel.send(error.stack);
 		}
 	}
+	
+	if(message.content.startsWith(prefix + "4k")) {
+    if (!message.channel.nsfw) return message.reply("Tu peux utiliser cette commande que dans un salon NSFW");
+
+    var subreddits = [
+        'NSFW_Wallpapers',
+        'SexyWallpapers',
+        'HighResNSFW',
+        'nsfw_hd',
+        'UHDnsfw'
+    ]
+    var sub = subreddits[Math.round(Math.random() * (subreddits.length - 1))];
+
+    randomPuppy(sub)
+        .then(url => {
+            const embed = new Discord.RichEmbed()
+                .setColor("RANDOM")
+                .setAuthor("4k", client.user.avatarURL)
+                .setFooter("xD")
+                .setImage(url);
+            message.channel.send({
+                embed
+            });
+        })
+}
 	
     
 });
