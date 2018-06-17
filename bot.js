@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const prefix = "cb!";
 const client = new Discord.Client();
 const bot = new Discord.Client();
+const { get } = require("snekfetch"); 
 
 client.on('ready', () => {
     console.log('I am ready!');
@@ -128,7 +129,17 @@ if(message.content.startsWith(prefix + "youtube")) {
           message.delete();
 }
 	
-	
+		if(msg.content.startsWith(prefix + 'meow')) {
+		try {
+			get('https://aws.random.cat/meow').then(res => {
+				const embed = new Discord.RichEmbed()
+				.setImage(res.body.file)
+				return msg.channel.send({embed});
+			});
+		} catch(err) {
+			return msg.channel.send(error.stack);
+		}
+	}
 	
     
 });
