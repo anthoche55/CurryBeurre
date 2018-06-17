@@ -33,12 +33,11 @@ client.on('message', message => {
 	
 	if(message.content.startsWith(prefix + "restart")) {
 	if(message.author.id !== "252873409401323520") return;
-            function resetBot(channel) {
                 message.react('✅')
                     .then(message => client.destroy())
                     .then(() => client.login(process.env.BOT_TOKEN));
 }
-	}
+	
 
 if(message.content.startsWith(prefix + "blague")) {
 	const embed = new Discord.RichEmbed()
