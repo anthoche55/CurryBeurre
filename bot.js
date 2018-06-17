@@ -8,7 +8,7 @@ client.on('ready', () => {
     client.user.setStatus('idle')
     client.user.setPresence({
       game: {
-        name: 'cb!help | ' + bot.guilds.size + 'serveurs | ' + bot.users.size + 'utilisateurs',
+        name: 'cb!help | ${client.guilds.size} serveurs | ${client.users.size} utilisateurs',
         type: 0
       }
   });
