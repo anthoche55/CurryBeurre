@@ -9,7 +9,7 @@ client.on('ready', () => {
     client.user.setPresence({
       game: {
         name: 'cb!help | By Cecemel_PvP',
-        type: 0
+        type: 1
       }
   });
 });
