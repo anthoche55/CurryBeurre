@@ -36,7 +36,7 @@ client.on('message', message => {
             function resetBot(channel) {
                 message.react('✅')
                     .then(message => client.destroy())
-                    .then(() => client.login("bot token"));
+                    .then(() => client.login(process.env.BOT_TOKEN));
 }
 	}
 
