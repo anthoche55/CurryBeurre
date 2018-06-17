@@ -120,33 +120,7 @@ if(message.content.startsWith(prefix + "youtube")) {
           message.delete();
 }
 	
-	if(message.content.startsWith(prefix + "meow")) {
-                   try {
-                    get('https://aws.random.cat/meow').then(res => {
-                        var replys = [
-                            '#F407FC', 
-                            '#034EEF',
-                            '#09F4D1',
-                            '#09F14E',
-                            '#E7EF07',
-                            '#F5A718',
-                            '#FB4B06',
-                            '#FB2702',
-                            '#F6F4F3',
-                            '#201F1F'
-                        ];
-                    
-                        let reponse = (replys[Math.floor(Math.random() * replys.length)])
-                        const embed = new Discord.RichEmbed()
-                        .setDescription(`:cat: Voilà une image aléatoire de chat pour toi, ${message.author.username} !`)
-                        .setImage(res.body.file)
-                        .setColor(reponse)
-                        return message.channel.send({embed});
-                    });
-                } catch(err) {
-                    return message.channel.send(error.stack);
-                }
-}
+	
 	
     
 });
