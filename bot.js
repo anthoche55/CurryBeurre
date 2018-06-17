@@ -165,7 +165,7 @@ if(message.content.startsWith(prefix + "youtube")) {
             const embed = new Discord.RichEmbed()
                 .setColor("RANDOM")
                 .setAuthor("4k", client.user.avatarURL)
-                .setFooter("xD")
+                .setFooter("© CurryBeurre | Tous droits réservés.")
                 .setImage(url);
             message.channel.send({
                 embed
