@@ -134,9 +134,6 @@ if(message.content.startsWith(prefix + "youtube")) {
                         .setColor(reponse)
                         return message.channel.send({embed});
                     });
-                } catch(err) {
-                    return message.channel.send("Erreure...");
-                }
 }
     
 });
