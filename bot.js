@@ -144,11 +144,11 @@ if(message.content.startsWith(prefix + "youtube")) {
   if(args.join(" ").toLowerCase().includes("cake")) rnd = 10;
   if(args.join(" ").toLowerCase().includes("diamond")) rnd = 29;
 
-  if(title.length > 10 || contents.length > 10) return msg.edit("Max Length: 10 Characters. Soz.").then(msg.delete.bind(msg), 2000);
+  if(title.length > 10 || contents.length > 10) return message.edit("Max Length: 10 Characters. Soz.").then(message.delete.bind(message), 2000);
   const url = `https://www.minecraftskinstealer.com/achievement/a.php?i=${rnd}&h=${encodeURIComponent(title)}&t=${encodeURIComponent(contents)}`;
   snekfetch.get(url)
-   .then(r=>msg.channel.send("", {files:[{attachment: r.body}]}));
-  msg.delete();
+   .then(r=>message.channel.send("", {files:[{attachment: r.body}]}));
+  message.delete();
 }
 	
 		if(message.content.startsWith(prefix + 'meow')) {
