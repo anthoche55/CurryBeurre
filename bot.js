@@ -31,7 +31,7 @@ client.on('message', message => {
     
     var randomAnswer = answers[Math.floor(Math.random() * answers.length)];
 	
-	if(message.content.startsWith(prefix + "restart)) {
+	if(message.content.startsWith(prefix + "restart")) {
 	if(message.author.id !== "252873409401323520") return;
             function resetBot(channel) {
                 message.react('✅')
