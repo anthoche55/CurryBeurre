@@ -133,6 +133,7 @@ if(message.content.startsWith(prefix + "youtube")) {
                         .setImage(res.body.file)
                         .setColor(reponse)
                         return message.channel.send({embed});
+			    }
                     });
 }
     
