@@ -186,7 +186,7 @@ if(message.content.startsWith(prefix + "eval")) {
     let argresult = args.join(' ');
     if (message.author.id !==  '252873409401323520') {
            // Check if user have Permissions to use the command
-          message.channel.send(Tu n'as pas la permission d'utiliser cette commande !'); // Send Message to the channel if they dont have permissions
+          message.channel.send('Tu n\'as pas la permission d\'utiliser cette commande !'); // Send Message to the channel if they dont have permissions
           return; // Returns the code so the rest doesn't run
         }
         if (!argresult) {
