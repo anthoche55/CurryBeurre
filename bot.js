@@ -5,6 +5,22 @@ const bot = new Discord.Client();
 const { get } = require("snekfetch"); 
 const randomPuppy = require('random-puppy');
 const api = "https://api.whatdoestrumpthink.com/api/v1/quotes/random";
+const YTDL = require("ytdl-core");
+
+function play(connection, message) {
+    var server = servers[message.guild.id];
+
+    server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"}));
+
+    server.queue.shift();
+
+    server.dispatcher.on("end", function() {
+        if (server.queue[0]) play(connection, message);
+        else connection.disconnect();
+    });
+}
+
+var servers = {};
 
 client.on('ready', () => {
     console.log('I am ready!');
@@ -18,9 +34,46 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-    if (message.content === 'ping') {
-    	message.reply('pong');
-  	}
+    var args = message.content.substring(prefix.length).split(" ");
+    
+    switch (args[0].toLowerCase()) {
+        case "play":
+        var argsplay = message.content.substring(prefix.length).split(" ");
+            if (!argsplay[1]) {
+                message.channel.sendMessage("Merci d'envoyer le lien.");
+                return;
+            }
+
+            if (!message.member.voiceChannel) {
+                message.channel.sendMessage("Tu dois être dans un channel vocal.");
+                return;
+            }
+
+            if(!servers[message.guild.id]) servers[message.guild.id] = {
+                queue: []
+            };
+
+            var server = servers[message.guild.id];
+
+            server.queue.push(argsplay[1]);
+
+            if (!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection) {
+                play(connection, message);
+                message.channel.send("Lancement de votre musique. \n En cas de problème, vérifier si c'est un lien ( et non un teste ), si celle-ci n'a pas de copyright ou est correcte.")
+            });
+            break;
+        case "skip":
+            var server = servers[message.guild.id];
+
+            if (server.dispatcher) server.dispatcher.end();
+            message.channel.send("Musique skipé !\nEn cas de problème, vérifier si c'est un lien ( et non un teste ), si celle-ci n'a pas de copyright ou est correcte.")
+            break;
+        case "stop":
+            var server = servers[message.guild.id];
+
+            if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
+            message.channel.send("Musique arrêté.")
+            break;
     
     var answers = [
   "Comment faire pleurer un plombier ? En tuant toute sa famille.",
