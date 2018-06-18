@@ -6,6 +6,7 @@ const { get } = require("snekfetch");
 const randomPuppy = require('random-puppy');
 const api = "https://api.whatdoestrumpthink.com/api/v1/quotes/random";
 const YTDL = require("ytdl-core");
+const db = low(adapter);
 
 function play(connection, message) {
     var server = servers[message.guild.id];
