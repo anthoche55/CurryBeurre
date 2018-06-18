@@ -186,7 +186,7 @@ let responses = [
     let fetched = responses[Math.floor(Math.random() * responses.length)];
     
     // Form Embed
-    const embed = new Discord.MessageEmbed()
+    const embed = new Discord.RichEmbed()
         .setColor(RANDOM)
         .setFooter(fetched);
     
