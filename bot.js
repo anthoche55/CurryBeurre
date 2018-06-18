@@ -3,12 +3,12 @@ const prefix = "cb!";
 const client = new Discord.Client();
 const bot = new Discord.Client();
 const { get } = require("snekfetch"); 
-const FileSync = require('lowdb/adapters/FileSync')
+const FileSync = require('lowdb/adapters/FileSync');
 const adapter = new FileSync('database.json');
 const randomPuppy = require('random-puppy');
 const api = "https://api.whatdoestrumpthink.com/api/v1/quotes/random";
 const YTDL = require("ytdl-core");
-const low = require('lowdb')
+const low = require('lowdb');
 const db = low(adapter);
 
 
