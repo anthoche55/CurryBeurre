@@ -187,7 +187,7 @@ let responses = [
     
     // Form Embed
     const embed = new Discord.RichEmbed()
-        .setColor(RANDOM)
+        .setColor("RANDOM")
         .setFooter(fetched);
     
     // Send Embed
