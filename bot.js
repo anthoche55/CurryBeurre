@@ -197,7 +197,7 @@ let responses = [
 }
 	
 if(message.content.startsWith(prefix + "trump")) {
-    snek.get(api).then(r => {
+    get(api).then(r => {
         let embed = new Discord.RichEmbed()
         .setTitle('Trump')
         .setDescription(r.body.message)
