@@ -18,7 +18,7 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-    var args = message.content.substring(prefix.length).split(" ");
+    
     
 
     var answers = [
