@@ -212,7 +212,6 @@ if(message.content.startsWith(prefix + "botstats")) {
     
 }
 	
-});
 	
 
 client.login(process.env.BOT_TOKEN);
