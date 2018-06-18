@@ -10,6 +10,8 @@
     "discord.js": "11.3.2",
     "lowdb": "^1.0.0",
     "request": "2.81.0",
+    "opusscript": "0.0.6",
+    "ffmpeg-binaries": "^3.2.2-3",
     "snekfetch": "^3.6.1",
     "random-puppy": "^1.1.0",
     "ytld-core": "^0.20.4"
