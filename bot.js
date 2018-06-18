@@ -171,64 +171,7 @@ if(message.content.startsWith(prefix + "youtube")) {
                 embed
             });
         })
-}
-	
-if(message.content.startsWith(prefix + "eval")) {
-    if(message.author.id !== '252873409401323520') return;
-    function clean(text) {
-      if (typeof(text) === "string")
-        return text.replace(/'/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
-      else
-          return text;
-    }
-  
-  console.log(`\n${message.author.username}#${message.author.discriminator} Used .Eval Command On ${message.guild.name}`)
-    let argresult = args.join(' ');
-    if (message.author.id !==  '252873409401323520') {
-           // Check if user have Permissions to use the command
-          message.channel.send('Tu n\'as pas la permission d\'utiliser cette commande !'); // Send Message to the channel if they dont have permissions
-          return; // Returns the code so the rest doesn't run
-        }
-        if (!argresult) {
-          return message.channel.send("Spécifie un code à executer !");
-        }
-  
-        try {
-  
-          var evaled = eval(argresult);
-  
-          if (typeof evaled !== "string")
-         evaled = require("util").inspect(evaled);
-         if (evaled.includes(process.env.BOT_TOKEN)) {
-            console.log(`\n${message.author.username}#${message.author.discriminator} Try To Get The Bot Token On ${message.guild.name} (ServerID: ${message.guild.id}).\n`)
-            return message.channel.send("", {
-             embed: {
-                color: 0xFF5733,
-                title: ':exclamation::exclamation: Non :exclamation::exclamation:',
-                description: `Nononononon, pas de token... !`
-             }
-            });
-          }
-  
-          let embed = new Discord.MessageEmbed()
-          .addField(`${client.user.username} - JavaScript Eval:`, `** **`)
-          .addField(":inbox_tray: **INPUT**", "```" + args.join(" ") + "```")
-          .addField(":outbox_tray: **OUTPUT**", "```" + clean(evaled) + "```")
-          .setColor(0xFF5733)
-          .setFooter(message.createdAt, message.author.avatarURL)
-          message.channel.send({embed})
-  
-        } catch (err){
-  
-          message.channel.send(new Discord.MessageEmbed()
-          .addField(`${client.user.username} - JavaScript Eval Error:`, "Il y a un poroblème, le code que tu as marqué ne marche pas!")
-          .addField(":no_entry: ERROR", "```" + clean(err) + "```")
-          .setColor(0xFF5733)
-          .setFooter(message.createdAt, message.author.avatarURL))
-          
-              .catch( error => message.channel.send(`**ERROR:** ${error.message}`))
-        }
-}
+}	
 	
 });
 
