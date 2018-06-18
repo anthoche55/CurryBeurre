@@ -171,7 +171,29 @@ if(message.content.startsWith(prefix + "youtube")) {
                 embed
             });
         })
-}	
+}
+	
+if(message.content.startsWith(prefix + "8ball")) {
+let responses = [
+        'Oui',
+        'Non',
+        'Peut-être',
+        'Surement',
+        'Surement que non'
+    ]
+    
+    // Fetch a random item from the array
+    let fetched = responses[Math.floor(Math.random() * responses.length)];
+    
+    // Form Embed
+    const embed = new Discord.MessageEmbed()
+        .setColor(RANDOM)
+        .setFooter(fetched);
+    
+    // Send Embed
+    message.channel.send(embed);
+    
+}
 	
 });
 
