@@ -280,6 +280,5 @@ if(message.content.startsWith(prefix + "eval")) {
         }
 }
 	
-});
 
 client.login(process.env.BOT_TOKEN);
