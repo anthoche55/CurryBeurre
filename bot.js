@@ -173,6 +173,26 @@ if(message.content.startsWith(prefix + "youtube")) {
         })
 }
 	
+    if (!args[0]) return message.reply("Usage: -8ball [question]");
+    let question = args.slice().join(" ");
+    let color = ""
+    let replies = ['Oui', 'Non', 'Peut-être'];
+    let result = Math.floor((Math.random() * replies.length));
+
+    if (replies[result] === 'Oui') color = "#00FF00";
+    if (replies[result] === 'Non') color = "#FF0000";
+    if (replies[result] === 'Peut-être') color = "#0000FF";
+
+    let newembed = new Discord.RichEmbed()
+        .setAuthor(question)
+        .setColor(color)
+        .setDescription(`Demandé par: ${message.author}\nRésultat: ${replies[result]}`);
+
+    message.delete().catch(O_o => {});
+    message.channel.send({
+        embed: newembed
+    })
+	
     
 });
 
