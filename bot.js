@@ -4,6 +4,7 @@ const client = new Discord.Client();
 const bot = new Discord.Client();
 const { get } = require("snekfetch"); 
 const randomPuppy = require('random-puppy');
+const api = "https://api.whatdoestrumpthink.com/api/v1/quotes/random";
 
 client.on('ready', () => {
     console.log('I am ready!');
@@ -194,6 +195,16 @@ let responses = [
     message.channel.send(embed);
     
 }
+	
+if(message.content.startsWith(prefix + "trump")) {
+    snek.get(api).then(r => {
+        let embed = new Discord.RichEmbed()
+        .setTitle('Trump')
+        .setDescription(r.body.message)
+        .setColor('RANDOM')
+        message.channel.send(embed)
+    })
+} 
 	
 });
 
