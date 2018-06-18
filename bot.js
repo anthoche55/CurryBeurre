@@ -206,6 +206,24 @@ if(message.content.startsWith(prefix + "trump")) {
     })
 } 
 	
+if(message.content.startsWith(prefix + "botstats")) {
+    let servers = client.guilds.size;
+    let users = 0;
+    let channels = client.channels.size;
+    
+    client.guilds.map(g => users += g.memberCount);
+    
+    const embed = new Discord.RichEmbed()
+        .setTitle('Communauté')
+        .addField('Serveurs', servers, true)
+        .addField('Utilisateurs', users, true)
+        .addField('Salons', channels, true);
+
+    // Send Embed
+    message.channel.send(embed);
+    
+}
+	
 });
 
 client.login(process.env.BOT_TOKEN);
