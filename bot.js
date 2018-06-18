@@ -26,44 +26,7 @@ client.on('ready', () => {
 client.on('message', message => {
     var args = message.content.substring(prefix.length).split(" ");
     
-    if(message.content.startsWith(prefix + "play")) {
-        var argsplay = message.content.substring(prefix.length).split(" ");
-            if (!argsplay[1]) {
-                message.channel.sendMessage("Merci d'envoyer le lien.");
-                return;
-            }
 
-            if (!message.member.voiceChannel) {
-                message.channel.sendMessage("Tu dois être dans un channel vocal.");
-                return;
-            }
-
-            if(!servers[message.guild.id]) servers[message.guild.id] = {
-                queue: []
-            };
-
-            var server = servers[message.guild.id];
-
-            server.queue.push(argsplay[1]);
-
-            if (!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection) {
-                play(connection, message);
-                message.channel.send("Lancement de votre musique. \n En cas de problème, vérifier si c'est un lien ( et non un teste ), si celle-ci n'a pas de copyright ou est correcte.")
-            });
-            }
-        if(message.content.startsWith(prefix + "skip")) {
-            var server = servers[message.guild.id];
-
-            if (server.dispatcher) server.dispatcher.end();
-            message.channel.send("Musique skipé !\nEn cas de problème, vérifier si c'est un lien ( et non un teste ), si celle-ci n'a pas de copyright ou est correcte.")
-            }
-        if(message.content.startsWith(prefix + "stop")) {
-            var server = servers[message.guild.id];
-
-            if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
-            message.channel.send("Musique arrêté.")
-            }
-    
     var answers = [
   "Comment faire pleurer un plombier ? En tuant toute sa famille.",
   "C'est l'histoire du ptit dej, vous la connaissez ? Pas de bol.",
