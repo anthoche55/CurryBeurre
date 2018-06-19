@@ -71,7 +71,7 @@ if(message.content.startsWith(prefix + "youtube")) {
 	message.channel.send(link);
 }
 	
-	if (message.content.startsWith(prefix + "help")) {
+		if (message.content.startsWith(prefix + "help")) {
 		message.channel.send("Je vous ai envoyé un message en message privé. Marquez --hhelp pour envoyer ce message dans ce salon./I sent you a message in private message. Mark --hhelp to send this message to this channel.")
 		const embed = new Discord.RichEmbed()
 		.setColor(0x954D23)
@@ -89,10 +89,14 @@ if(message.content.startsWith(prefix + "youtube")) {
 		.addField("cb!chat", "Chatter avec d'autres serveurs/Chat with other servers that have the bot")
 		.addBlankField(true)
 		.addField("cb!meow", "Images de chats au hasard/Random pictures of cats")
-		
+		.addBlankField(true)
+		.addField("cb!4k", "IMPORTANT : CONTENUE PORNOGRAPHIQUE PAS ENDESSOUS DE 18 ANS/IMPORTANT : PORNO NOT UNDER 18 YEARS")
+		.addBlankField(true)
+		.addField("cb!8ball", "Vous posez une question en argument et le bot vous répond par oui;non;autres/Question the bot as argument and the bot will answer with yes;no;others")
+
 		message.author.send({embed})
 	}
-	
+
 	if (message.content.startsWith(prefix + "hhelp")) {
 		const embed = new Discord.RichEmbed()
 		.setColor(0x954D23)
@@ -110,10 +114,14 @@ if(message.content.startsWith(prefix + "youtube")) {
 		.addField("cb!chat", "Chatter avec d'autres serveurs/Chat with other servers that have the bot")
 		.addBlankField(true)
 		.addField("cb!meow", "Images de chats au hasard/Random pictures of cats")
+		.addBlankField(true)
+		.addField("cb!4k", "IMPORTANT : CONTENUE PORNOGRAPHIQUE PAS ENDESSOUS DE 18 ANS/IMPORTANT : PORNO NOT UNDER 18 YEARS")
+		.addBlankField(true)
+		.addField("cb!8ball", "Vous posez une question en argument et le bot vous répond par oui;non;autres/Question the bot as argument and the bot will answer with yes;no;others")
 		
+
 		message.channel.send({embed})
 	}
-	
 	if(message.content.startsWith(prefix + "chat")) {
             let xoargs = message.content.split(" ").slice(1);
             let xo03 = xoargs.join(" ")
