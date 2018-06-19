@@ -19,82 +19,8 @@ client.on('ready', () => {
 
 client.on('message', message => {
     
-var args = message.content.substring(prefix.length).split(" ");
-    if (!message.content.startsWith(prefix)) return;
-    switch (args[0].toLowerCase()) {
-        case "play":
-            if (!message.guild.member(client.user).hasPermission('SPEAK')) return message.channel.send('**Désolé, je ne peux mas rejoindre le salon car je n\'ai pas les permissions requis!**').catch(console.error);
-            if (!args[1]) {
-                message.channel.send("**S\'il vous plaît, mettez un lien YouTube pour que je puisse jouer le son.**");
-                return;
-            }
 
-            if (!message.member.voiceChannel) {
-                message.channel.send("**Je pense que ça va mieux marcher si vous êtes dans un salon vocal!**");
-                return;
-            }
-
-            if (console.error) {
-                message.channel.send("**Désolé, je ne peux pas chercher cette musique, mettez un lien s\'il vous plaît.**");
-                return;
-            }
-
-            if (!servers[message.guild.id]) servers[message.guild.id] = {
-                queue: []
-            };
-
-            var server = servers[message.guild.id];
-
-            server.queue.push(args[1]);
-
-            message.channel.sendMessage('``La musique a été ajoutée avec succes.``')
-            if (!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection) {
-                play(connection, message);
-            });
-            break;
-        case "stop":
-            var server = servers[message.guild.id];
-            if (!message.member.voiceChannel) {
-                message.channel.send("**Je pense que ça va mieux marcher si vous êtes dans un salon vocal!**");
-                return;
-            }
-
-            if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
-            message.channel.send('``Les musiques ont été supmrimées.``');
-            break;
-        case "skip":
-            if (!message.member.voiceChannel) {
-                message.channel.send("**Je pense que ça va mieux marcher si vous êtes dans un salon vocal!**");
-                return;
-            }
-
-            var server = servers[message.guild.id];
-            if (server.dispatcher) server.dispatcher.end();
-            message.channel.send('``La musique a été passée avec succes.``');
-            break;
-        case "pause":
-            if (!message.member.voiceChannel) {
-                message.channel.send("**Je pense que ça va mieux marcher si vous êtes dans un salon vocal!**");
-                return;
-            }
-
-            var server = servers[message.guild.id];
-            if (server.dispatcher) server.dispatcher.pause();
-            message.channel.send('``La musique est en pause``');
-            break;
-        case "resume":
-            if (!message.member.voiceChannel) {
-                message.channel.send("**Je pense que ça va mieux marcher si vous êtes dans un salon vocal!**");
-                return;
-            }
-
-            var server = servers[message.guild.id];
-            if (server.dispatcher) server.dispatcher.resume();
-            message.channel.send('``La musique a continuée avec succes.``');
-            break;
-    }
-
-    var answers = [
+var answers = [
   "Comment faire pleurer un plombier ? En tuant toute sa famille.",
   "C'est l'histoire du ptit dej, vous la connaissez ? Pas de bol.",
   "Un monsieur visite un musée. Soudain il s'arrête et dit au guide :  \n- Ah, c'est moche ! \n- C'est du Picasso, répond le guide. \nPlus loin, il s'écrie de nouveau : \n- Ah, c'est vraiment moche ! \n- Ca Monsieur, c'est un miroir !",
