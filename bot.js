@@ -4,7 +4,6 @@ const client = new Discord.Client();
 const bot = new Discord.Client();
 const { get } = require("snekfetch"); 
 const randomPuppy = require('random-puppy');
-const YTDL = require('ytdl-core');
 
 client.on('ready', () => {
     console.log('I am ready!');
