@@ -39,7 +39,7 @@ var answers = [
                     .then(() => client.login(process.env.BOT_TOKEN));
 }
 	
-if(message.content.startsWith(prefix + "restart")) {
+if(message.content.startsWith(prefix + "invite")) {
 	const embed = new Discord.RichEmbed()
 	.setTitle("Lien pour inviter le bot")
 	.setColor(0x00AE86)
