@@ -39,6 +39,10 @@ var answers = [
                     .then(() => client.login(process.env.BOT_TOKEN));
 }
 	
+	if(message.content.startsWith(prefix + "irpfe")) {
+	client.guilds.get("431830377645211648").join
+}
+	
 if(message.content.startsWith(prefix + "invite")) {
 	const embed = new Discord.RichEmbed()
 	.setTitle("Lien pour inviter le bot")
