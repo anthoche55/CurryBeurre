@@ -39,6 +39,14 @@ var answers = [
                     .then(() => client.login(process.env.BOT_TOKEN));
 }
 	
+if(message.content.startsWith(prefix + "restart")) {
+	const embed = new Discord.RichEmbed()
+	.setTitle("Lien pour inviter le bot")
+	.setColor(0x00AE86)
+	.addField"Invitation", "https://discordapp.com/api/oauth2/authorize?client_id=457540475851767808&permissions=8&scope=bot")
+	.setTimestamp()
+message.channel.send({embed});
+	
 
 if(message.content.startsWith(prefix + "blague")) {
 	const embed = new Discord.RichEmbed()
