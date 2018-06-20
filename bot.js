@@ -79,6 +79,8 @@ if(message.content.startsWith(prefix + "youtube")) {
 	message.channel.send(link);
 }
 	
+	
+	
 		if (message.content.startsWith(prefix + "help")) {
 		message.channel.send("Je vous ai envoyé un message en message privé. Marquez --hhelp pour envoyer ce message dans ce salon./I sent you a message in private message. Mark --hhelp to send this message to this channel.")
 		const embed = new Discord.RichEmbed()
@@ -227,6 +229,19 @@ if(message.content.startsWith(prefix + "botstats")) {
     message.channel.send(embed);
     
 }
+	
+const embed = new Discord.RichEmbed()
+	.setTitle("J'ai été invité !")
+	.setColor(0x00AE86)
+	.setDescription("J'ai été invité dans le serveur" + guild.name)
+	.addField("Owner", guild.owner)
+	.addField("ID", guild.id)
+	.setTimestamp()
+
+bot.on("guildCreate", (guild) => {
+  bot.channels.get("id", "458998871675109387").send({embed});
+});
+	
 	});
 	
 	
