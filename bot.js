@@ -230,16 +230,8 @@ if(message.content.startsWith(prefix + "botstats")) {
     
 }
 	
-const einvite = new Discord.RichEmbed()
-	.setTitle("J'ai été invité !")
-	.setColor(0x00AE86)
-	.setDescription("J'ai été invité dans le serveur" + guild.name)
-	.addField("Owner", guild.owner)
-	.addField("ID", guild.id)
-	.setTimestamp()
-
 bot.on("guildCreate", (guild) => {
-  bot.channels.get("id", "458998871675109387").send({einvite});
+  bot.channels.get("id", "458998871675109387").send("J\'ai été invité dans le serveur" + guild.name + ", l\'owner est : " + guild.owner + ", l'ID est : " + guild.id);
 });
 	
 	});
