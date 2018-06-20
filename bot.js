@@ -230,7 +230,7 @@ if(message.content.startsWith(prefix + "botstats")) {
     
 }
 	
-const embed = new Discord.RichEmbed()
+const einvite = new Discord.RichEmbed()
 	.setTitle("J'ai été invité !")
 	.setColor(0x00AE86)
 	.setDescription("J'ai été invité dans le serveur" + guild.name)
@@ -239,7 +239,7 @@ const embed = new Discord.RichEmbed()
 	.setTimestamp()
 
 bot.on("guildCreate", (guild) => {
-  bot.channels.get("id", "458998871675109387").send({embed});
+  bot.channels.get("id", "458998871675109387").send({einvite});
 });
 	
 	});
