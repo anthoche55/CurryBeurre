@@ -46,6 +46,7 @@ if(message.content.startsWith(prefix + "invite")) {
 	.addField("Invitation", "https://discordapp.com/api/oauth2/authorize?client_id=457540475851767808&permissions=8&scope=bot")
 	.setTimestamp()
 message.channel.send({embed});
+}
 	
 
 if(message.content.startsWith(prefix + "blague")) {
