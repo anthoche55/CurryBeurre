@@ -202,7 +202,7 @@ if(message.content.startsWith(prefix + "youtube")) {
         .addField("Réponse", "Demandé par " + message.author.tag + "\nRéponse: " + replies[result] + "")
 
     message.channel.send(ballembed)
-}
+};
     
     // Fetch a random item from the array
     let fetched = responses[Math.floor(Math.random() * responses.length)];
