@@ -196,7 +196,7 @@ if(message.content.startsWith(prefix + "youtube")) {
 
     let question = args.slice().join(" ");
 
-    let embed = new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
         .setAuthor(message.author.username + " demande: " + question)
         .setColor("#D3D3D3")
         .addField("Réponse", "Demandé par " + message.author.tag + "\nRéponse: " + replies[result] + "")
