@@ -205,18 +205,7 @@ if(message.content.startsWith(prefix + "8ball")) {
     message.channel.send(ballembed)
 };
     
-    // Fetch a random item from the array
-    let fetched = responses[Math.floor(Math.random() * responses.length)];
-    
-    // Form Embed
-    const embed = new Discord.RichEmbed()
-        .setColor("RANDOM")
-        .setFooter(fetched);
-    
-    // Send Embed
-    message.channel.send(embed);
-    
-}	
+
 	
 if(message.content.startsWith(prefix + "botstats")) {
     let servers = client.guilds.size;
