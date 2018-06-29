@@ -190,6 +190,7 @@ if(message.content.startsWith(prefix + "youtube")) {
         })
 }
 	
+if(message.content.startsWith(prefix + "8ball")) {
     if (!args[2]) return message.reply("Pose une question!");
     let replies = ["Oui, surement :8ball:", "Non, jamais :8ball:", "Peut-être/Peut-être pas :8ball:"]
     let result = Math.floor((Math.random() * replies.length));
