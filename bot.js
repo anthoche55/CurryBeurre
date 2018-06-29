@@ -196,12 +196,12 @@ if(message.content.startsWith(prefix + "youtube")) {
 
     let question = args.slice().join(" ");
 
-    const embed = new Discord.RichEmbed()
+    const ballembed = new Discord.RichEmbed()
         .setAuthor(message.author.username + " demande: " + question)
         .setColor("#D3D3D3")
         .addField("Réponse", "Demandé par " + message.author.tag + "\nRéponse: " + replies[result] + "")
 
-    message.channel.send(embed)
+    message.channel.send(ballembed)
 }
     
     // Fetch a random item from the array
