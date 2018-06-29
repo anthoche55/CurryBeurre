@@ -190,14 +190,19 @@ if(message.content.startsWith(prefix + "youtube")) {
         })
 }
 	
-if(message.content.startsWith(prefix + "8ball")) {
-let responses = [
-        'Oui',
-        'Non',
-        'Peut-être',
-        'Surement',
-        'Surement que non'
-    ]
+    if (!args[2]) return message.reply("Pose une question!");
+    let replies = ["Oui, surement :8ball:", "Non, jamais :8ball:", "Peut-être/Peut-être pas :8ball:"]
+    let result = Math.floor((Math.random() * replies.length));
+
+    let question = args.slice().join(" ");
+
+    let embed = new Discord.RichEmbed()
+        .setAuthor(message.author.username + " demande: " + question)
+        .setColor("#D3D3D3")
+        .addField("Réponse", "Demandé par " + message.author.tag + "\nRéponse: " + replies[result] + "")
+
+    message.channel.send(embed)
+}
     
     // Fetch a random item from the array
     let fetched = responses[Math.floor(Math.random() * responses.length)];
