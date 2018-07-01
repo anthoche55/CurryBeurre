@@ -4,6 +4,7 @@ const client = new Discord.Client();
 const bot = new Discord.Client();
 const { get } = require("snekfetch"); 
 const randomPuppy = require('random-puppy');
+const hastebin = require('hastebin-gen');
 
 client.on('ready', () => {
     console.log('I am ready!');
@@ -228,6 +229,18 @@ if(message.content.startsWith(prefix + "botstats")) {
 bot.on("guildCreate", (guild) => {
   bot.channels.get("id", "458998871675109387").send("J\'ai été invité dans le serveur" + guild.name + ", l\'owner est : " + guild.owner + ", l'ID est : " + guild.id);
 });
+
+if(message.content.startsWith(prefix + "hastebin")) {
+  hastebin(args.join(' '), "js").then(r => {
+      var hastLink = r
+      const hastEmb = new Discord.RichEmbed()
+      .setColor(0xFFF000)
+
+      .setURL(hastLink)
+      .addField('Link: ', `${hastLink}`)
+       message.channel.send({embed: hastEmb})
+  }).catch(console.error);  
+}
 	
 	});
 	
