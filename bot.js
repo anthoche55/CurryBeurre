@@ -23,10 +23,7 @@ client.on('ready', () => {
     .setAuthor(bot.user.username, bot.user.avatarURL)
     .setTitle(`J'ai rejoin un serveur`)
     .setDescription(`**Nom du serveur**: ${guild.name}\n**ID**: ${guild.id}\n**Membres gagnés**: ${guild.memberCount}`)
-    send(liveJoin, liveJEmbed, {
-        name: `Support`,
-        icon: `https://cdn1.iconfinder.com/data/icons/flat-business-icons/128/search-512.png`
-    })
+    liveJoin.send(liveJEmbed)
  });
  bot.on("guildDelete", guild => {
     const liveLeave = bot.channels.get("457431485868146690");
@@ -35,10 +32,7 @@ client.on('ready', () => {
     .setAuthor(bot.user.username, bot.user.avatarURL)
     .setTitle(`J'ai quitté un serveur`)
     .setDescription(`**Nom du serveur**: ${guild.name}\n**ID**: ${guild.id}\n**Membres perdus**: ${guild.memberCount}`)
-    send(liveLeave, liveLEmbed, {
-        name: `Support`,
-        icon: `https://cdn1.iconfinder.com/data/icons/flat-business-icons/128/search-512.png`
-    })
+    liveLeave.send(liveLEmbed)
  });
 
 
