@@ -16,6 +16,32 @@ client.on('ready', () => {
   });
 });
 
+ bot.on("guildCreate", guild => {
+    const liveJoin = bot.channels.get("457431485868146690");
+    let liveJEmbed = new Discord.RichEmbed()
+    .setColor("#65f441")
+    .setAuthor(bot.user.username, bot.user.avatarURL)
+    .setTitle(`J'ai rejoin un serveur`)
+    .setDescription(`**Nom du serveur**: ${guild.name}\n**ID**: ${guild.id}\n**Membres gagnés**: ${guild.memberCount}`)
+    send(liveJoin, liveJEmbed, {
+        name: `Support`,
+        icon: `https://cdn1.iconfinder.com/data/icons/flat-business-icons/128/search-512.png`
+    })
+ });
+ bot.on("guildDelete", guild => {
+    const liveLeave = bot.channels.get("457431485868146690");
+    let liveLEmbed = new Discord.RichEmbed()
+    .setColor("#f44242")
+    .setAuthor(bot.user.username, bot.user.avatarURL)
+    .setTitle(`J'ai quitté un serveur`)
+    .setDescription(`**Nom du serveur**: ${guild.name}\n**ID**: ${guild.id}\n**Membres perdus**: ${guild.memberCount}`)
+    send(liveLeave, liveLEmbed, {
+        name: `Support`,
+        icon: `https://cdn1.iconfinder.com/data/icons/flat-business-icons/128/search-512.png`
+    })
+ });
+
+
 
 client.on('message', message => {
     
