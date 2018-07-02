@@ -16,27 +16,6 @@ client.on('ready', () => {
   });
 });
 
- bot.on("guildCreate", guild => {
-    const liveJoin = bot.channels.get("457431485868146690");
-    let liveJEmbed = new Discord.RichEmbed()
-    .setColor("#65f441")
-    .setAuthor(bot.user.username, bot.user.avatarURL)
-    .setTitle(`J'ai rejoin un serveur`)
-    .setDescription(`**Nom du serveur**: ${guild.name}\n**ID**: ${guild.id}\n**Membres gagnés**: ${guild.memberCount}`)
-    liveJoin.send(liveJEmbed)
- });
- bot.on("guildDelete", guild => {
-    const liveLeave = bot.channels.get("457431485868146690");
-    let liveLEmbed = new Discord.RichEmbed()
-    .setColor("#f44242")
-    .setAuthor(bot.user.username, bot.user.avatarURL)
-    .setTitle(`J'ai quitté un serveur`)
-    .setDescription(`**Nom du serveur**: ${guild.name}\n**ID**: ${guild.id}\n**Membres perdus**: ${guild.memberCount}`)
-    liveLeave.send(liveLEmbed)
- });
-
-
-
 client.on('message', message => {
     
 
