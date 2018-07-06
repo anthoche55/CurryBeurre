@@ -141,12 +141,21 @@ if(message.content.startsWith(prefix + "youtube")) {
             var embed = new Discord.RichEmbed()
             .setColor("0x88CC14")
             .setTitle("Message Interne")
-            .addField("Pseudo de l'utilisateur", message.author.username + "#" + message.author.discriminator, true)
+            .addField("Utilisateur", message.author.username + "#" + message.author.discriminator, true)
             .addField("Discord", message.guild.name, true)
             .addField("Message", xo03)
             .setFooter("© CurryBeurre | Tous droits réservés.")
             .setTimestamp()
-          client.channels.findAll('name', 'u-chat').map(channel => channel.send({embed}))
+	  var embedadm = new Discord.RichEmbed()
+            .setColor("0xFF0000")
+            .setTitle("Message Interne")
+            .addField("Administrateur", message.author.username + "#" + message.author.discriminator, true)
+            .addField("Discord", message.guild.name, true)
+            .addField("Message", xo03)
+            .setFooter("© CurryBeurre | Tous droits réservés.")
+            .setTimestamp()
+	  if(message.author.id !== "252873409401323520") client.channels.findAll('name', 'u-chat').map(channel => channel.send({embedadm}))
+          if(!message.author.id !== "252873409401323520") client.channels.findAll('name', 'u-chat').map(channel => channel.send({embed}))
           message.delete();
 }
        
