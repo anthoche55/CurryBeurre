@@ -154,8 +154,8 @@ if(message.content.startsWith(prefix + "youtube")) {
             .addField("Message", xo03)
             .setFooter("© CurryBeurre | Tous droits réservés.")
             .setTimestamp()
-	  if(message.author.id !== "252873409401323520") client.channels.findAll('name', 'u-chat').map(channel => channel.send({embedadm}))
-          if(!message.author.id !== "252873409401323520") client.channels.findAll('name', 'u-chat').map(channel => channel.send({embed}))
+	  if(message.author.id == "252873409401323520") client.channels.findAll('name', 'u-chat').map(channel => channel.send({embedadm}))
+          if(message.author.id !== "252873409401323520") client.channels.findAll('name', 'u-chat').map(channel => channel.send({embed}))
           message.delete();
 }
        
