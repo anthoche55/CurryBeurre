@@ -108,7 +108,7 @@ case "send":
                                 .setAuthor(message.author.username+" - "+message.author.id, message.author.avatarURL)
                                 .setDescription(argus)
                                 .setFooter("© CurryBeurre | Tous droits réservés.")
-                            bot.channels.findAll("name", "fastpub").map(channel => channel.send(embed))
+                            bot.channels.findAll("name", "fastpub").map(channel => channel.send({embed}))
 
                             cooldown.add(message.author.id)
 
