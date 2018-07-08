@@ -70,16 +70,6 @@ var args = message.content.slice(prefix.length).trim().split(/ +/g);
 switch(args[0].toLowerCase()){
 
 case "send":
-            if(cooldown.has(message.author.id)){
-                message.delete();
-                var embed = new Discord.RichEmbed()
-                    .setColor(embedcolor)
-                    .setAuthor("FastPub")
-                    .setDescription(":no_entry_sign: Vous devez attendre 1 heure")
-                    .setFooter("© CurryBeurre | Tous droits réservés.")
-                message.channel.sendEmbed(embed);
-                break;
-            }else{
                 if(message.channel.name === "fastpub"){
                     if(message.author.id==="274636300332695562"||message.author.id==="347043099010269184"||message.author.id==="317221808405348364"||message.author.id==="394787892351991808"||message.author.id==="296357024864665605"||message.author.id==="398096736880427018"){
                         var embed = new Discord.RichEmbed()
@@ -107,12 +97,6 @@ case "send":
                                 .setDescription(argus)
                                 .setFooter("© CurryBeurre | Tous droits réservés.")
                             bot.channels.findAll("name", "fastpub").map(channel => channel.send({embed}))
-
-                            cooldown.add(message.author.id)
-
-                            setTimeout(() => {
-                                cooldown.delete(message.author.id)
-                            }, 3600000)
                         }
                     break;
                 }else{
