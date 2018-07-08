@@ -6,8 +6,6 @@ const { get } = require("snekfetch");
 const randomPuppy = require('random-puppy');
 const embedcolor = 0xe54242;
 
-var cooldown = new Set();
-
 client.on('ready', () => {
     console.log('I am ready!');
     client.user.setStatus('idle')
