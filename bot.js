@@ -160,7 +160,8 @@ if(message.content.startsWith(prefix + "youtube")) {
       text: "© CurryBeurre | Tous droits réservés."
     }
   }
-});)
+});
+)												     ))
           if(message.author.id !== "252873409401323520") client.channels.findAll('name', 'u-chat').map(channel => channel.send({embed: {
     color: 0x88CC14,
     title: "Message Interne",
@@ -183,7 +184,8 @@ if(message.content.startsWith(prefix + "youtube")) {
       text: "© CurryBeurre | Tous droits réservés."
     }
   }
-});)
+});
+)												      )
           message.delete();
 }
        
