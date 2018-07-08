@@ -138,7 +138,7 @@ if(message.content.startsWith(prefix + "youtube")) {
             if(!xo02) return message.reply("Le channel **u-chat** est introuvable")
             if(message.channel.name !== 'u-chat') return message.reply("Commande à effectuer dans **u-chat**")
             if(!xo03) return message.reply("Merci d'écrire un message qui sera envoyé à tous les serveurs où je suis.")
-	  if(message.author.id == "252873409401323520") client.channels.findAll('name', 'u-chat').map(channel => channel.send({embed: {
+	  if(message.author.id == "252873409401323520") client.channels.findAll('name', 'u-chat').send({embed: {
     color: 0xFF0000,
     title: "Message Interne",
     fields: [{
@@ -161,8 +161,8 @@ if(message.content.startsWith(prefix + "youtube")) {
     }
   }
 });
-)												     ))
-          if(message.author.id !== "252873409401323520") client.channels.findAll('name', 'u-chat').map(channel => channel.send({embed: {
+												     
+          if(message.author.id !== "252873409401323520") client.channels.findAll('name', 'u-chat').map.send({embed: {
     color: 0x88CC14,
     title: "Message Interne",
     fields: [{
@@ -185,7 +185,7 @@ if(message.content.startsWith(prefix + "youtube")) {
     }
   }
 });
-)												      )
+												      
           message.delete();
 }
        
