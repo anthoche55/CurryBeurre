@@ -98,6 +98,7 @@ case "send":
                                 .setFooter("© CurryBeurre | Tous droits réservés.")
                             bot.channels.findAll("name", "fastpub").map(channel => channel.send({embed}))
                         }
+			break;
                 }else{
                     var embed = new Discord.RichEmbed()
                         .setColor(embedcolor)
@@ -107,7 +108,7 @@ case "send":
                     message.channel.sendEmbed(embed);
                 }
             }
-            break;
+            
 }
  
 if(message.content.startsWith(prefix + "google")) {
