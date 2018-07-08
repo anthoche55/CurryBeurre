@@ -5,6 +5,8 @@ const bot = new Discord.Client();
 const { get } = require("snekfetch"); 
 const randomPuppy = require('random-puppy');
 
+var cooldown = new Set();
+
 client.on('ready', () => {
     console.log('I am ready!');
     client.user.setStatus('idle')
