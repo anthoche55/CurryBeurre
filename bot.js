@@ -76,7 +76,7 @@ case "send":
                 message.delete();
                 var embed = new Discord.RichEmbed()
                     .setColor(embedcolor)
-                    .setAuthor("FastPub", bot.user.avatarURL)
+                    .setAuthor("FastPub")
                     .setDescription(":no_entry_sign: Vous devez attendre 1 heure")
                     .setFooter("© CurryBeurre | Tous droits réservés.")
                 message.channel.sendEmbed(embed);
@@ -86,7 +86,7 @@ case "send":
                     if(message.author.id==="274636300332695562"||message.author.id==="347043099010269184"||message.author.id==="317221808405348364"||message.author.id==="394787892351991808"||message.author.id==="296357024864665605"||message.author.id==="398096736880427018"){
                         var embed = new Discord.RichEmbed()
                             .setColor(embedcolor)
-                            .setAuthor("FastPub", bot.user.avatarURL)
+                            .setAuthor("FastPub")
                             .setDescription(":no_entry_sign: Vous êtes banni ! :no_entry_sign:")
                             .setFooter("© CurryBeurre | Tous droits réservés.")
                         message.channel.sendEmbed(embed);
@@ -98,7 +98,7 @@ case "send":
                         if(!argus){
                             var embed = new Discord.RichEmbed()
                                 .setColor(embedcolor)
-                                .setAuthor("FastPub", bot.user.avatarURL)
+                                .setAuthor("FastPub")
                                 .setDescription(":no_entry_sign: Vous devez envoyer une pub :no_entry_sign:")
                                 .setFooter("© CurryBeurre | Tous droits réservés.")
                             message.channel.sendEmbed(embed);
@@ -120,7 +120,7 @@ case "send":
                 }else{
                     var embed = new Discord.RichEmbed()
                         .setColor(embedcolor)
-                        .setAuthor("FastPub", bot.user.avatarURL)
+                        .setAuthor("FastPub")
                         .setDescription(":no_entry_sign: Vous devez envoyer cela dans le salon **#fastpub**")
                         .setFooter("© CurryBeurre | Tous droits réservés.")
                     message.channel.sendEmbed(embed);
