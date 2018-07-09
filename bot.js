@@ -107,7 +107,7 @@ case "send":
                         .setFooter("© CurryBeurre | Tous droits réservés.")
                     message.channel.sendEmbed(embed);
                 }
-            }
+            
             
 }
  
