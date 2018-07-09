@@ -16,8 +16,7 @@ client.on('ready', () => {
       }
   });
 	
-  bot.channels.get('456916205366935555').map(channel => channel.send("| LE BOT VIENT DE SE LANCER |"")
-  bot.channels.get('456916205366935555').send("| LE BOT VIENT DE SE LANCER |");
+  bot.channels.get('456916205366935555').map(channel => channel.send("| LE BOT VIENT DE SE LANCER |"))
 	
 });
 
