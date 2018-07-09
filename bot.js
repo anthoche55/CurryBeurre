@@ -15,6 +15,11 @@ client.on('ready', () => {
         type: 1
       }
   });
+	
+  bot.channels.get('456916205366935555').send("**=======================**");
+  bot.channels.get('456916205366935555').send("| LE BOT VIENT DE SE LANCER |");
+  bot.channels.get('456916205366935555').send("**=======================**");
+	
 });
 
 client.on('message', message => {
@@ -140,55 +145,15 @@ if(message.content.startsWith(prefix + "youtube")) {
             if(!xo02) return message.reply("Le channel **u-chat** est introuvable")
             if(message.channel.name !== 'u-chat') return message.reply("Commande à effectuer dans **u-chat**")
             if(!xo03) return message.reply("Merci d'écrire un message qui sera envoyé à tous les serveurs où je suis.")
-	  if(message.author.id == "252873409401323520") client.channels.findAll('name', 'u-chat').channel.send({embed: {
-    color: 0xFF0000,
-    title: "Message Interne",
-    fields: [{
-        name: "Administrateur",
-        value: message.author.username + "#" + message.author.discriminator
-      },
-      {
-        name: "Discord",
-        value: message.guild.name
-      },
-      {
-        name: "Message",
-        value: xo03
-      }
-    ],
-    timestamp: new Date(),
-    footer: {
-      icon_url: client.user.avatarURL,
-      text: "© CurryBeurre | Tous droits réservés."
-    }
-  }
-});
-												     
-          if(message.author.id !== "252873409401323520") client.channels.findAll('name', 'u-chat').channel.send({embed: {
-    color: 0x88CC14,
-    title: "Message Interne",
-    fields: [{
-        name: "Utilisateur",
-        value: message.author.username + "#" + message.author.discriminator
-      },
-      {
-        name: "Discord",
-        value: message.guild.name
-      },
-      {
-        name: "Message",
-        value: xo03
-      }
-    ],
-    timestamp: new Date(),
-    footer: {
-      icon_url: client.user.avatarURL,
-      text: "© CurryBeurre | Tous droits réservés."
-    }
-  }
-});
-												      
-          message.delete();
+	  var embed = new Discord.RichEmbed()
+            .setColor("0x88CC14")
+            .setTitle("Pastel Message")
+            .addField("Pseudo de l'utilisateur", message.author.username + "#" + message.author.discriminator, true)
+            .addField("Discord", message.guild.name, true)
+            .addField("Message", xo03)
+            .setFooter("© PastelWorld | Tous droits réservés.")
+            .setTimestamp()											     
+          client.channels.findAll('name', 'u-chat').map(channel => channel.send({embed}))
 }
        
 		if(message.content.startsWith(prefix + 'meow')) {
