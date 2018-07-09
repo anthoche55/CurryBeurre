@@ -97,7 +97,7 @@ case "send":
                                 .setDescription(argus)
                                 .setFooter("© CurryBeurre | Tous droits réservés.")
                             bot.channels.findAll("name", "fastpub").map(channel => channel.send({embed}))
-                        }
+                        
 			break;
                 }else{
                     var embed = new Discord.RichEmbed()
