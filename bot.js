@@ -144,7 +144,7 @@ if(message.content.startsWith(prefix + "youtube")) {
             if(!xo03) return message.reply("Merci d'écrire un message qui sera envoyé à tous les serveurs où je suis.")
 	  var embed = new Discord.RichEmbed()
             .setColor("0x88CC14")
-            .setTitle("Pastel Message")
+            .setTitle("Message Interne")
             .addField("Pseudo de l'utilisateur", message.author.username + "#" + message.author.discriminator, true)
             .addField("Discord", message.guild.name, true)
             .addField("Message", xo03)
