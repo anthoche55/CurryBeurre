@@ -67,6 +67,21 @@ message.channel.send({embed});
 message.channel.send({embed});
 }
 	
+if(message.content.startsWith(prefix + "serverinfo")) {
+
+    let sicon = message.guild.iconURL;
+    let serverembed = new Discord.RichEmbed()
+    .setDescription("Server Information")
+    .setColor("#15f153")
+    .setThumbnail(sicon)
+    .addField("Nom du serveur", message.guild.name)
+    .addField("Créé le", message.guild.createdAt)
+    .addField("Vous avez rejoin le", message.member.joinedAt)
+    .addField("Totalitée de membres ayant rejoin", message.guild.memberCount);
+
+    return message.channel.send(serverembed);
+  }
+	
 var args = message.content.slice(prefix.length).trim().split(/ +/g);
 	
  
