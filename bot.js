@@ -4,6 +4,7 @@ const client = new Discord.Client();
 const bot = new Discord.Client();
 const { get } = require("snekfetch"); 
 const randomPuppy = require('random-puppy');
+const config = require('./config.json');
 const embedcolor = 0xe54242;
 
 client.on('ready', () => {
