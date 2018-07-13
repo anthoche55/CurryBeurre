@@ -174,7 +174,7 @@ if(message.content.startsWith(config.prefix + "youtube")) {
             .addField("Pseudo de l'utilisateur", message.author.username + "#" + message.author.discriminator, true)
             .addField("Discord", message.guild.name, true)
             .addField("Message", xo03)
-            .setFooter("© PastelWorld | Tous droits réservés.")
+            .setFooter("© CurryBeurre | Tous droits réservés.")
             .setTimestamp()											     
           client.channels.findAll('name', 'u-chat').map(channel => channel.send({embed}))
 }
