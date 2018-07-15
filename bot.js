@@ -267,7 +267,7 @@ client.on("guildCreate", guild => {
 	channel.send(bvn)
 });
 
-client.on("guildRemove", guild => {
+client.on("guildDelete", guild => {
 	var channel = client.channels.get('458998871675109387');
 	const bvn = new Discord.RichEmbed()
 	  .setColor("0xf44242")
