@@ -16,8 +16,17 @@ client.on('ready', () => {
         type: 1
       }
   });
-	
-	
+});
+
+client.on("guildCreate", guild => {
+	guild.owner.send("Bonjour/bonsoir, je suis Curry Beurre, merci de m'avoir ajouté à votre serveur !");
+	var channel = client.channels.get('458998871675109387');
+  	const bvn = Discord.RichEmbed
+	  .setAuthor("J\ai été invité dans un serveur", guild.iconURL)
+	  .addField("Nom du serveur", guild.name)
+	  .addField("Membres", guild.memberCount)
+	  .addField("Owner du serveur", guild.owner)
+	channel.send(bvn)
 });
 
 client.on('message', message => {
