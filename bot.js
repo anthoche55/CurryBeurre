@@ -18,17 +18,6 @@ client.on('ready', () => {
   });
 });
 
-client.on("guildCreate", guild => {
-	guild.owner.send("Bonjour/bonsoir, je suis Curry Beurre, merci de m'avoir ajouté à votre serveur !");
-	var channel = client.channels.get('458998871675109387');
-  	const bvn = Discord.RichEmbed
-	  .setAuthor("J\ai été invité dans un serveur", guild.iconURL)
-	  .addField("Nom du serveur", guild.name)
-	  .addField("Membres", guild.memberCount)
-	  .addField("Owner du serveur", guild.owner)
-	channel.send(bvn)
-});
-
 client.on('message', message => {
     
 
@@ -261,10 +250,18 @@ if(message.content.startsWith(prefix + "botstats")) {
     
 }
 	
-bot.on("guildCreate", (guild) => {
-  bot.channels.get("id", "458998871675109387").send("J\'ai été invité dans le serveur" + guild.name + ", l\'owner est : " + guild.owner + ", l'ID est : " + guild.id);
+});
+	
+client.on("guildCreate", guild => {
+	guild.owner.send("Bonjour/bonsoir, je suis Curry Beurre, merci de m'avoir ajouté à votre serveur !");
+	var channel = client.channels.get('458998871675109387');
+	const bvn = Discord.RichEmbed()
+	  .setAuthor("J\ai été invité dans un serveur", guild.iconURL)
+	  .addField("Nom du serveur", guild.name)
+	  .addField("Membres", guild.memberCount)
+	  .addField("Owner du serveur", guild.owner)
+	channel.send(bvn)
 });
 
-});
 
 client.login(process.env.BOT_TOKEN);
