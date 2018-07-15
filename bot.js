@@ -261,6 +261,7 @@ client.on("guildCreate", guild => {
 	  .addField("Membres", guild.memberCount)
 	  .addField("Owner du serveur", guild.owner)
 	  .addField("ID", guild.id)
+	  .addField("guild.createInvite")
 	channel.send(bvn)
 });
 
