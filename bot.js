@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const prefix = config.prefix;
+const prefix = "cb!";
 const client = new Discord.Client();
 const bot = new Discord.Client();
 const { get } = require("snekfetch"); 
@@ -35,13 +35,13 @@ var answers = [
     
     var randomAnswer = answers[Math.floor(Math.random() * answers.length)];
 	
-	if(message.content.startsWith(config.prefix + "restart")) {
+	if(message.content.startsWith(prefix + "restart")) {
 	if(message.author.id !== "252873409401323520") return;
                 message.react('✅')
                     .then(message => client.destroy())
                     .then(() => client.login(process.env.BOT_TOKEN));
 }
-if(message.content.startsWith(config.prefix + "invite")) {
+if(message.content.startsWith(prefix + "invite")) {
 	const embed = new Discord.RichEmbed()
 	.setTitle("Lien pour inviter le bot")
 	.setColor(0x00AE86)
@@ -51,7 +51,7 @@ message.channel.send({embed});
 }
 	
 
-if(message.content.startsWith(config.prefix + "blague")) {
+if(message.content.startsWith(prefix + "blague")) {
 	const embed = new Discord.RichEmbed()
 	.setTitle("Une blague ? C'est parti")
 	.setColor(0x00AE86)
@@ -60,7 +60,7 @@ if(message.content.startsWith(config.prefix + "blague")) {
 message.channel.send({embed});
 }
 	
-	if(message.content.startsWith(config.prefix + "heure")) {
+	if(message.content.startsWith(prefix + "heure")) {
 	const embed = new Discord.RichEmbed()
 	.setTitle("Il est :")
 	.setColor(0x00AE86)
@@ -68,7 +68,7 @@ message.channel.send({embed});
 message.channel.send({embed});
 }
 	
-if(message.content.startsWith(config.prefix + "serverinfo")) {
+if(message.content.startsWith(prefix + "serverinfo")) {
 
     let sicon = message.guild.iconURL;
     let serverembed = new Discord.RichEmbed()
@@ -85,24 +85,24 @@ if(message.content.startsWith(config.prefix + "serverinfo")) {
 	
 var args = message.content.slice(prefix.length).trim().split(/ +/g);
 	
-if(message.content.startsWith(config.prefix + "prefix")) {
+if(message.content.startsWith(prefix + "prefix")) {
 	
   if (message.author.id !=="252873409401323520") return message.channel.send("Euuuuh, " + message.author.username + " t\'as cru quoi gros ?");
 	
   let newPrefix = message.content.split(" ").slice(1, 2)[0];
 	
-  config.prefix = newPrefix;
+  prefix = newPrefix;
 
   fs.writeFile("./config.json", JSON.stringify(config), (err) => console.error);
 }	
  
-if(message.content.startsWith(config.prefix + "google")) {
+if(message.content.startsWith(prefix + "google")) {
     let google = args.slice(1).join('+');
     let link = `https://www.google.com/search?q=` + google;
 	message.channel.send(link);
 }
     
-if(message.content.startsWith(config.prefix + "youtube")) {
+if(message.content.startsWith(prefix + "youtube")) {
     let youtube = args.slice(1).join('+');
     let link = `https://www.youtube.com/results?search_query=` + youtube;
 	message.channel.send(link);
@@ -110,7 +110,7 @@ if(message.content.startsWith(config.prefix + "youtube")) {
 	
 	
 	
-		if (message.content.startsWith(config.prefix + "help")) {
+		if (message.content.startsWith(prefix + "help")) {
 		message.channel.send("Je vous ai envoyé un message en message privé. Marquez --hhelp pour envoyer ce message dans ce salon./I sent you a message in private message. Mark --hhelp to send this message to this channel.")
 		const embed = new Discord.RichEmbed()
 		.setColor(0x954D23)
@@ -136,7 +136,7 @@ if(message.content.startsWith(config.prefix + "youtube")) {
 		message.author.send({embed})
 	}
 
-	if (message.content.startsWith(config.prefix + "hhelp")) {
+	if (message.content.startsWith(prefix + "hhelp")) {
 		const embed = new Discord.RichEmbed()
 		.setColor(0x954D23)
 		.setTitle("Command List:")
@@ -161,7 +161,7 @@ if(message.content.startsWith(config.prefix + "youtube")) {
 
 		message.channel.send({embed})
 	}
-	if(message.content.startsWith(config.prefix + "chat")) {
+	if(message.content.startsWith(prefix + "chat")) {
             let xoargs = message.content.split(" ").slice(1);
             let xo03 = xoargs.join(" ")
             var xo02 = message.guild.channels.find('name', 'u-chat');
@@ -179,7 +179,7 @@ if(message.content.startsWith(config.prefix + "youtube")) {
           client.channels.findAll('name', 'u-chat').map(channel => channel.send({embed}))
 }
        
-		if(message.content.startsWith(config.prefix + 'meow')) {
+		if(message.content.startsWith(prefix + 'meow')) {
 		try {
 			get('https://aws.random.cat/meow').then(res => {
 				const embed = new Discord.RichEmbed()
@@ -193,7 +193,7 @@ if(message.content.startsWith(config.prefix + "youtube")) {
 		}
 	}
 	
-	if(message.content.startsWith(config.prefix + "4k")) {
+	if(message.content.startsWith(prefix + "4k")) {
     if (!message.channel.nsfw) return message.reply("Tu peux utiliser cette commande que dans un salon NSFW");
 
     var subreddits = [
@@ -218,7 +218,7 @@ if(message.content.startsWith(config.prefix + "youtube")) {
         })
 }
 	
-if(message.content.startsWith(config.prefix + "8ball")) {
+if(message.content.startsWith(prefix + "8ball")) {
     if (!args[2]) return message.reply("Pose une question!");
     let replies = ["Oui, surement :8ball:", "Non, jamais :8ball:", "Peut-être/Peut-être pas :8ball:"]
     let result = Math.floor((Math.random() * replies.length));
@@ -235,7 +235,7 @@ if(message.content.startsWith(config.prefix + "8ball")) {
     
 
 	
-if(message.content.startsWith(config.prefix + "botstats")) {
+if(message.content.startsWith(prefix + "botstats")) {
     let servers = client.guilds.size;
     let users = 0;
     let channels = client.channels.size;
@@ -248,7 +248,6 @@ if(message.content.startsWith(config.prefix + "botstats")) {
         .addField('Utilisateurs', users, true)
         .addField('Salons', channels, true);
 
-    // Send Embed
     message.channel.send(embed);
     
 }
