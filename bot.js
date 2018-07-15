@@ -82,17 +82,6 @@ if(message.content.startsWith(prefix + "serverinfo")) {
   }
 	
 var args = message.content.slice(prefix.length).trim().split(/ +/g);
-	
-if(message.content.startsWith(prefix + "prefix")) {
-	
-  if (message.author.id !=="252873409401323520") return message.channel.send("Euuuuh, " + message.author.username + " t\'as cru quoi gros ?");
-	
-  let newPrefix = message.content.split(" ").slice(1, 2)[0];
-	
-  prefix = newPrefix;
-
-  fs.writeFile("./config.json", JSON.stringify(config), (err) => console.error);
-}	
  
 if(message.content.startsWith(prefix + "google")) {
     let google = args.slice(1).join('+');
@@ -166,15 +155,28 @@ if(message.content.startsWith(prefix + "youtube")) {
             if(!xo02) return message.reply("Le channel **u-chat** est introuvable")
             if(message.channel.name !== 'u-chat') return message.reply("Commande à effectuer dans **u-chat**")
             if(!xo03) return message.reply("Merci d'écrire un message qui sera envoyé à tous les serveurs où je suis.")
-	  var embed = new Discord.RichEmbed()
+	  var chat = new Discord.RichEmbed()
             .setColor("0x88CC14")
             .setTitle("Message Interne")
-            .addField("Pseudo de l'utilisateur", message.author.username + "#" + message.author.discriminator, true)
+            .addField("Utilisateur", message.author.username + "#" + message.author.discriminator, true)
             .addField("Discord", message.guild.name, true)
             .addField("Message", xo03)
             .setFooter("© CurryBeurre | Tous droits réservés.")
-            .setTimestamp()											     
-          client.channels.findAll('name', 'u-chat').map(channel => channel.send({embed}))
+            .setTimestamp()	
+	  var ochat = new Discord.RichEmbed()
+            .setColor("0x88CC14")
+            .setTitle("Message Interne")
+            .addField("Administrateur", message.author.username + "#" + message.author.discriminator, true)
+            .addField("Discord", message.guild.name, true)
+            .addField("Message", xo03)
+            .setFooter("© CurryBeurre | Tous droits réservés.")
+            .setTimestamp()	
+    if(message.author.id !== "252873409401323520") {
+          client.channels.findAll('name', 'u-chat').map(channel => channel.send({chat}))
+    }
+    if(message.author.id == "252873409401323520") {
+	  client.channels.findAll('name', 'u-chat').map(channel => channel.send({ochat}))
+    }
 }
        
 		if(message.content.startsWith(prefix + 'meow')) {
