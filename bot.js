@@ -256,10 +256,11 @@ client.on("guildCreate", guild => {
 	guild.owner.send("Bonjour/bonsoir, je suis Curry Beurre, merci de m'avoir ajouté à votre serveur !");
 	var channel = client.channels.get('458998871675109387');
 	const bvn = new Discord.RichEmbed()
-	  .setAuthor("J\ai été invité dans un serveur", guild.iconURL)
+	  .setAuthor("J\'ai été invité dans un serveur", guild.iconURL)
 	  .addField("Nom du serveur", guild.name)
 	  .addField("Membres", guild.memberCount)
 	  .addField("Owner du serveur", guild.owner)
+	  .addField("ID", guild.id)
 	channel.send(bvn)
 });
 
