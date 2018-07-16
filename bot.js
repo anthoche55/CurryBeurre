@@ -283,7 +283,6 @@ if(message.content.startsWith(prefix + "botstats")) {
     
 }
 	
-});
 	
 client.on("guildCreate", guild => {
 	guild.owner.send("Bonjour/bonsoir, je suis Curry Beurre, merci de m'avoir ajouté à votre serveur !");
