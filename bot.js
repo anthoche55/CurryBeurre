@@ -43,7 +43,7 @@ if(message.content.startsWith(prefix + "invite")) {
 	const embed = new Discord.RichEmbed()
 	.setTitle("Message à envoyer pour une pub pour le bot")
 	.setColor(0x00AE86)
-	.addField("Message", "Bonjour,\nVous voulez un bot fun;\n	modération;\n	administration;\n	avec un salon pour discuter avec tout les gens des serveurs qui ont le bot ? \n Le bot Curry Beurre est pour vous,\nLe serveur de support : https://discord.gg/2PQ4rfT \nVoici également le lien pour inviter le bot dans votre serveur : https://discordapp.com/api/oauth2/authorize?client_id=457540475851767808&permissions=8&scope=bot")
+	.addField("Message", "Bonjour,\nVous voulez un bot fun;\n	- Modération;\n	- Administration;\n	- Avec un salon pour discuter avec tout les gens des serveurs qui ont le bot ? \n Le bot Curry Beurre est pour vous,\nLe serveur de support : https://discord.gg/2PQ4rfT \nVoici également le lien pour inviter le bot dans votre serveur : https://discordapp.com/api/oauth2/authorize?client_id=457540475851767808&permissions=8&scope=bot")
 	message.channel.send(embed)
 }
 
@@ -161,22 +161,8 @@ if(message.content.startsWith(prefix + "youtube")) {
             .addField("Discord", message.guild.name, true)
             .addField("Message", xo03)
             .setFooter("© CurryBeurre | Tous droits réservés.")
-            .setTimestamp()	
-	  var ochat = new Discord.RichEmbed()
-            .setColor("0x88CC14")
-            .setTitle("Message Interne")
-            .addField("Administrateur", message.author.username + "#" + message.author.discriminator, true)
-            .addField("Discord", message.guild.name, true)
-            .addField("Message", xo03)
-            .setFooter("© CurryBeurre | Tous droits réservés.")
-            .setTimestamp()	
-    if(message.author.id !== "252873409401323520") {
+            .setTimestamp()
           client.channels.findAll('name', 'u-chat').map(channel => channel.send({chat}))
-    }
-    if(message.author.id == "252873409401323520") {
-	  client.channels.findAll('name', 'u-chat').map(channel => channel.send({ochat}))
-    }
-}
        
 		if(message.content.startsWith(prefix + 'meow')) {
 		try {
