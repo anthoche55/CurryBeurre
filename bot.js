@@ -150,7 +150,8 @@ if(message.content.startsWith(prefix + "youtube")) {
             .setFooter("© CurryBeurre | Tous droits réservés.")
             .setTimestamp()
           client.channels.findAll('name', 'u-chat').map(channel => channel.send({chat}))
-       
+}
+		  
 		if(message.content.startsWith(prefix + 'meow')) {
 		try {
 			get('https://aws.random.cat/meow').then(res => {
@@ -203,7 +204,7 @@ if(message.content.startsWith(prefix + "8ball")) {
         .addField("Réponse", "Demandé par " + message.author.tag + "\nRéponse: " + replies[result] + "")
 
     message.channel.send(ballembed)
-};
+}
     
 
 	
