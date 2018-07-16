@@ -65,7 +65,7 @@ message.channel.send({embed});
 message.channel.send({embed});
 }
 	
-if(message.content.startsWith(prefix + "serverinfo")) {
+if(message.content.startsWith(prefix + "sinfo")) {
 
     let sicon = message.guild.iconURL;
     let serverembed = new Discord.RichEmbed()
@@ -102,22 +102,16 @@ if(message.content.startsWith(prefix + "youtube")) {
 		.setColor(0x954D23)
 		.setTitle("Command List:")
 		.addField("cb!help", "Cette commande/this command")
-		.addBlankField(true)
 		.addField("cb!blague", "Raconter une blague/Tell you a joke")
-		.addBlankField(true)
 		.addField("cb!heure", "Donner l'heure actuelle/Gives you the time")
-		.addBlankField(true)
 		.addField("cb!google", "Cherche votre argument sur Google/Search your argument on Google")
-		.addBlankField(true)
 		.addField("cb!youtube", "Chercher votre argument sur YouTube/Search your argument on Youtube")
-		.addBlankField(true)
 		.addField("cb!chat", "Chatter avec d'autres serveurs/Chat with other servers that have the bot")
-		.addBlankField(true)
 		.addField("cb!meow", "Images de chats au hasard/Random pictures of cats")
-		.addBlankField(true)
 		.addField("cb!4k", "IMPORTANT : CONTENUE PORNOGRAPHIQUE PAS ENDESSOUS DE 18 ANS/IMPORTANT : PORNO NOT UNDER 18 YEARS")
-		.addBlankField(true)
 		.addField("cb!8ball", "Vous posez une question en argument et le bot vous répond par oui;non;autres/Question the bot as argument and the bot will answer with yes;no;others")
+		.addField("cb!sinfo", "Information sur le serveur/Information about the server")
+		.addField("cb!botstats", "Information sur le bot/Information about the bot")
 
 		message.author.send({embed})
 	}
@@ -127,23 +121,16 @@ if(message.content.startsWith(prefix + "youtube")) {
 		.setColor(0x954D23)
 		.setTitle("Command List:")
 		.addField("cb!help", "Cette commande/this command")
-		.addBlankField(true)
 		.addField("cb!blague", "Raconter une blague/Tell you a joke")
-		.addBlankField(true)
 		.addField("cb!heure", "Donner l'heure actuelle/Gives you the time")
-		.addBlankField(true)
 		.addField("cb!google", "Cherche votre argument sur Google/Search your argument on Google")
-		.addBlankField(true)
 		.addField("cb!youtube", "Chercher votre argument sur YouTube/Search your argument on Youtube")
-		.addBlankField(true)
 		.addField("cb!chat", "Chatter avec d'autres serveurs/Chat with other servers that have the bot")
-		.addBlankField(true)
 		.addField("cb!meow", "Images de chats au hasard/Random pictures of cats")
-		.addBlankField(true)
 		.addField("cb!4k", "IMPORTANT : CONTENUE PORNOGRAPHIQUE PAS ENDESSOUS DE 18 ANS/IMPORTANT : PORNO NOT UNDER 18 YEARS")
-		.addBlankField(true)
 		.addField("cb!8ball", "Vous posez une question en argument et le bot vous répond par oui;non;autres/Question the bot as argument and the bot will answer with yes;no;others")
-		
+		.addField("cb!sinfo", "Information sur le serveur/Information about the server")
+		.addField("cb!botstats", "Information sur le bot/Information about the bot")
 
 		message.channel.send({embed})
 	}
