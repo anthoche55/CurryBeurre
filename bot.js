@@ -22,7 +22,7 @@ client.on('message', message => {
 	
 if(message.content.startsWith("prob")) {
 
-client.channels.findAll('name', 'u-chat').map(channel => channel.send({embed: {
+client.channels.findAll('name', 'u-chat').send({embed: {
     title: "Petit souci",
     fields: [{
         name: "Erreure",
@@ -31,7 +31,6 @@ client.channels.findAll('name', 'u-chat').map(channel => channel.send({embed: {
     ]
 }
 });
-)
 }
 
 var answers = [
