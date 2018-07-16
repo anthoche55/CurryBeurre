@@ -30,8 +30,8 @@ client.channels.findAll('name', 'u-chat').map(channel => channel.send({embed: {
       }
     ]
 }
-});
-)
+}));
+
 }
 
 var answers = [
