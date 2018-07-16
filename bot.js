@@ -21,7 +21,7 @@ client.on('ready', () => {
 client.on('message', message => {
 	
 if(message.content.startsWith("prob")) {
-const erreure = new Discord.RichEmbed()
+let erreure = new Discord.RichEmbed()
 	.setTitle("Petit souci")
 	.addField("Bonjour, la commande \"cb!chat\" est désactivée pour un moment car il y a un petit problème\nLa commande va revenir dans un petit bout de temps")
 	.setFooter("Cordialement, Cecemel_PvP, et encore toutes mes excuses")
@@ -41,7 +41,7 @@ var answers = [
     var randomAnswer = answers[Math.floor(Math.random() * answers.length)];
 	
 	if(message.content.startsWith(prefix + "restart")) {
-	if(message.author.id !== "252873409401323520") return;
+	if(message.author.id !== "252873409401323520") return
                 message.react('✅')
                     .then(message => client.destroy())
                     .then(() => client.login(process.env.BOT_TOKEN));
