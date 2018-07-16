@@ -238,6 +238,12 @@ client.on("guildCreate", guild => {
 	  .addField("Membres", guild.memberCount)
 	  .addField("Owner du serveur", guild.owner)
 	  .addField("ID", guild.id)
+	client.user.setPresence({
+		game: {
+		  name: `cb!help | ${client.guilds.size} serveurs`,
+		  type: 0
+		}
+	});
 	channel.send(bvn)
 });
 
@@ -250,6 +256,12 @@ client.on("guildDelete", guild => {
 	  .addField("Membres", guild.memberCount)
 	  .addField("Owner du serveur", guild.owner)
 	  .addField("ID", guild.id)
+	client.user.setPresence({
+		game: {
+		  name: `cb!help | ${client.guilds.size} serveurs`,
+		  type: 0
+		}
+	});
 	channel.send(bye)
 });
 
