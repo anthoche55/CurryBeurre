@@ -269,6 +269,14 @@ client.on("guildCreate", guild => {
 
 client.on("guildDelete", guild => {
 	var channel = client.channels.get('458998871675109387');
+	const bye = new Discord.RichEmbed()
+	  .setColor("0xe81414")
+	  .setAuthor("J\'ai été enlevé d'un serveur", guild.iconURL)
+	  .addField("Nom du serveur", guild.name)
+	  .addField("Membres", guild.memberCount)
+	  .addField("Owner du serveur", guild.owner)
+	  .addField("ID", guild.id)
+	channel.send(bye)
 });
 
 
