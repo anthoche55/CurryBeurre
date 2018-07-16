@@ -19,6 +19,14 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
+	
+if(message.content.startsWith("prob")) {
+const erreure = new Discord.RichEmbed
+	.setTitle("Petit souci")
+	.addField("Bonjour, la commande \"cb!chat\" est désactivée pour un moment car il y a un petit problème\nLa commande va revenir dans un petit bout de temps")
+	.setFooter("Cordialement, Cecemel_PvP, et encore toutes mes excuses")
+client.channels.findAll('name', 'u-chat').map(channel => channel.send({erreure}))
+}
 
 var answers = [
   "Comment faire pleurer un plombier ? En tuant toute sa famille.",
