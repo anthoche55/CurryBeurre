@@ -19,38 +19,6 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-	
-		let msg = message.content;
-		if (message.author.bot) return;
-		if (!message.guild) return;
-		if(msg.startsWith(prefix)) {
-			msg = msg.substring(prefix.length);
-			let command = msg.split(" ")[0];
-			let args = msg.split(" ").slice(1);
-
-			handleCommand(message, command, args);
-		}
-});
-
-async function handleCommand(message, command, args) {
-	var color = Math.floor(Math.random()*(16777216-0+1)+0);
-	console.log("Commande éxécutée :  " + command + " argument utilisé : " + args + " dans le serveur " + message.guild);
-	if (command == "google") {
-			var lookup = args.join(" ");
-			message.channel.send("<a:googling:426453223310622740>" + " Loading...").then(msg => {
- 			google(lookup, (err, res) => {
-				if (err) console.error(err);
-				else {
-					let url = res.links[res.start].href; //you can also use .href instead of .link
-					if (url != null) {
-						msg.edit(url);
-					} else {
-						msg.edit("error");
-					}
-				}
-			});
-			});
-	}
 
 var answers = [
   "Comment faire pleurer un plombier ? En tuant toute sa famille.",
