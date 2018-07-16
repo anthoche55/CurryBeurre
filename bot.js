@@ -10,7 +10,12 @@ const embedcolor = 0xe54242;
 client.on('ready', () => {
     console.log('I am ready!');
     client.user.setStatus('idle')
-    client.user.setActivity("cb!help | " + client.guilds.size + " serveurs");
+    client.user.setPresence({
+		game: {
+		  name: 'cb!help | " + client.guilds.size + " serveurs',
+		  type: PLAYING
+		}
+	});
 });
 
 client.on('message', message => {
