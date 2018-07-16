@@ -13,7 +13,7 @@ client.on('ready', () => {
     client.user.setPresence({
 		game: {
 		  name: 'cb!help | " + client.guilds.size + " serveurs',
-		  type: PLAYING
+		  type: 0
 		}
 	});
 });
