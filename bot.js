@@ -10,12 +10,7 @@ const embedcolor = 0xe54242;
 client.on('ready', () => {
     console.log('I am ready!');
     client.user.setStatus('idle')
-    client.user.setPresence({
-      game: {
-        name: 'cb!help | By Cecemel_PvP | ' + client.guilds.size + ' serveurs',
-        type: 1
-      }
-  });
+    client.user.setActivity('cb!help | ${client.guild.size} serveurs', { type: 'WATCHING' });
 });
 
 client.on('message', message => {
