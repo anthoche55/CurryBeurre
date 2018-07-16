@@ -26,7 +26,7 @@ client.channels.findAll('name', 'u-chat').send({embed: {
     title: "Petit souci",
     fields: [{
         name: "Erreure",
-        value: "Erreure", "Bonjour, la commande \"cb!chat\" est désactivée pour un moment car il y a un petit problème\nLa commande va revenir dans un petit bout de temps"
+        value: "Bonjour, la commande \"cb!chat\" est désactivée pour un moment car il y a un petit problème\nLa commande va revenir dans un petit bout de temps"
       }
     ]
 }
