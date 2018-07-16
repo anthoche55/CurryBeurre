@@ -21,11 +21,17 @@ client.on('ready', () => {
 client.on('message', message => {
 	
 if(message.content.startsWith("prob")) {
-let erreure = new Discord.RichEmbed()
-	.setTitle("Petit souci")
-	.addField("Erreure", "Bonjour, la commande \"cb!chat\" est désactivée pour un moment car il y a un petit problème\nLa commande va revenir dans un petit bout de temps")
-	.setFooter("Cordialement, Cecemel_PvP, et encore toutes mes excuses")
-client.channels.findAll('name', 'u-chat').map(channel => channel.send({erreure}))
+
+client.channels.findAll('name', 'u-chat').map(channel => channel.send({embed: {
+    title: "Petit souci",
+    fields: [{
+        name: "Erreure",
+        value: "Erreure", "Bonjour, la commande \"cb!chat\" est désactivée pour un moment car il y a un petit problème\nLa commande va revenir dans un petit bout de temps"
+      }
+    ]
+}
+});
+)
 }
 
 var answers = [
