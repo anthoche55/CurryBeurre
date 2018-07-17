@@ -155,7 +155,20 @@ if(message.content.startsWith(prefix + "youtube")) {
             .addField("Message", xo03)
             .setFooter("© CurryBeurre | Tous droits réservés.")
             .setTimestamp()
+	  var ochat = new Discord.RichEmbed()
+            .setColor("0xf44253")
+            .setTitle("Message Interne")
+            .addField("Fondateur", message.author.username + "#" + message.author.discriminator, true)
+            .addField("Discord", message.guild.name, true)
+            .addField("Message", xo03)
+            .setFooter("© CurryBeurre | Tous droits réservés.")
+            .setTimestamp()
+	if(message.author.id !== "252873409401323520") {
           message.guild.channels.findAll('name', 'u-chat').map(channel => channel.send({ embed: chat }))
+	}
+	if(message.author.id == "252873409401323520") {
+	  message.guild.channels.findAll('name', 'u-chat').map(channel => channel.send({ embed: ochat }))
+	}
 }
 		  
 		if(message.content.startsWith(prefix + 'meow')) {
