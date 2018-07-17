@@ -273,6 +273,7 @@ client.on("guildCreate", guild => {
 		}
 	});
 	channel.send({ embed: bvn })
+	guild.createChannel("u-chat", "text");
 });
 
 client.on("guildDelete", guild => {
