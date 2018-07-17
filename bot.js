@@ -147,7 +147,7 @@ if(message.content.startsWith(prefix + "youtube")) {
             if(!xo02) return message.reply("Le channel **u-chat** est introuvable")
             if(message.channel.name !== 'u-chat') return message.reply("Commande à effectuer dans **u-chat**")
             if(!xo03) return message.reply("Merci d'écrire un message qui sera envoyé à tous les serveurs où je suis.")
-	  var chat = new Discord.MessageEmbed()
+	  var chat = new Discord.RichEmbed()
             .setColor("0x88CC14")
             .setTitle("Message Interne")
 	    .setThumbnail(message.author.avatarURL)
@@ -156,7 +156,7 @@ if(message.content.startsWith(prefix + "youtube")) {
             .addField("Message", xo03)
             .setFooter("© CurryBeurre | Tous droits réservés.")
             .setTimestamp()
-	  var achat = new Discord.MessageEmbed()
+	  var achat = new Discord.RichEmbed()
             .setColor("0xff0000")
             .setTitle("Message Interne")
 	    .setThumbnail(message.author.avatarURL)
@@ -165,7 +165,7 @@ if(message.content.startsWith(prefix + "youtube")) {
             .addField("Message", xo03)
             .setFooter("© CurryBeurre | Tous droits réservés.")
             .setTimestamp()
-	  var bannedemb = new Discord.MessageEmbed()
+	  var bannedemb = new Discord.RichEmbed()
             .setColor("0xff0000")
             .setTitle("Tu es banni")
             .addField("Tu es banni", message.author.username + "#" + message.author.discriminator, true)
@@ -184,8 +184,10 @@ if(message.content.startsWith(prefix + "youtube")) {
       if (admin.includes(message.author.id)) {
     	client.channels.findAll('name', 'u-chat').map(channel => channel.send({ embed: achat }))
       }
-	if(message.author.id !== admin) {
+	if(message.author.id !== "252873409401323520") {
+		if(message.author.id !== "308195368427061248") {
           client.channels.findAll('name', 'u-chat').map(channel => channel.send({ embed: chat }))
+		}	
 	}
 }
 		  
