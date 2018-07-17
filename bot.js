@@ -53,7 +53,7 @@ if(message.content.startsWith(prefix + "invite")) {
 	const embed = new Discord.RichEmbed()
 	.setTitle("Message à envoyer pour une pub pour le bot")
 	.setColor(0x00AE86)
-	.addField("Message", "Bonjour,\nVous voulez un bot fun;\n	- Modération;\n	- Administration;\n	- Avec un salon pour discuter avec tout les gens des serveurs qui ont le bot ? \nLe bot Curry Beurre est pour vous,\nLe serveur de support : https://discord.gg/2TqKvfG \nVoici également le lien pour inviter le bot dans votre serveur : https://discordapp.com/api/oauth2/authorize?client_id=457540475851767808&permissions=8&scope=bot")
+	.addField("Message", "Salut Discordeur :wave: !\nTu cherches un bot pour modérer, Des photo coquine (:scream:) ou meme plein de chose?\n  Alors le bot Curry Beurre est fait pour twa!\nVous voulez un bot fun;\n:one: Modération;\n:two: Administration;\n:three: Avec un salon pour discuter avec tout\nles gens des serveurs qui ont le bot ? \nLe bot Curry Beurre est pour vous,\nLe serveur de support :heart: : https://discord.gg/2TqKvfG\nVoici également le lien pour inviter le bot dans votre serveur :heart: : https://discordapp.com/api/oauth2/authorize?client_id=457540475851767808&permissions=8&scope=bot")
 	message.channel.send({ embed: embed })
 }
 
