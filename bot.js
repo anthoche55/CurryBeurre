@@ -155,7 +155,7 @@ if(message.content.startsWith(prefix + "youtube")) {
             .addField("Message", xo03)
             .setFooter("© CurryBeurre | Tous droits réservés.")
             .setTimestamp()
-          message.guild.channels.findAll('name', 'u-chat').map(channel => channel.send({chat}))
+          message.guild.channels.findAll('name', 'u-chat').map(channel => channel.send({ embed: chat }))
 }
 		  
 		if(message.content.startsWith(prefix + 'meow')) {
