@@ -156,7 +156,7 @@ if(message.content.startsWith(prefix + "youtube")) {
             .setFooter("© CurryBeurre | Tous droits réservés.")
             .setTimestamp()
 	  var ochat = new Discord.RichEmbed()
-            .setColor("0xf44253")
+            .setColor("0xff0000")
             .setTitle("Message Interne")
             .addField("Fondateur", message.author.username + "#" + message.author.discriminator, true)
             .addField("Discord", message.guild.name, true)
