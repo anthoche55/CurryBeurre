@@ -20,18 +20,10 @@ client.on('ready', () => {
 
 client.on('message', message => {
 	
-if(message.content.startsWith("prob")) {
-
-client.channels.findAll('name', 'u-chat').map(channel => channel.send({embed: {
-    title: "Petit souci",
-    fields: [{
-        name: "Erreure",
-        value: "Bonjour, la commande \"cb!chat\" est désactivée pour un moment car il y a un petit problème\nLa commande va revenir dans un petit bout de temps"
-      }
-    ]
+if(message.content.startsWith(prefix + "slist")) {
+	client.guilds.map(g=>g.name).join('\n')
 }
-}));
-
+	
 }
 
 var answers = [
