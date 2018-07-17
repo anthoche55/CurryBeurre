@@ -21,7 +21,7 @@ client.on('ready', () => {
 client.on('message', message => {
 	
 if(message.content.startsWith(prefix + "slist")) {
-	client.guilds.map(g=>g.name).join('\n')
+	message.channel.send(client.guilds.map(g=>g.name).join('\n'))
 }
 	
 
