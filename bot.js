@@ -257,7 +257,7 @@ if(message.content.startsWith(prefix + "botstats")) {
 	
 	
 client.on("guildCreate", guild => {
-	guild.owner.send("Bonjour/bonsoir, je suis Curry Beurre, merci de m'avoir ajouté à votre serveur !");
+	guild.owner.send("Bonjour/bonsoir, je suis Curry Beurre, merci de m'avoir ajouté à votre serveur ! J'ai créé le salon \"u-chat\" pour la commande \"cb!chat\", merci et bon amusement !");
 	var channel = client.channels.get('458998871675109387');
 	const bvn = new Discord.RichEmbed()
 	  .setColor("0x41f441")
