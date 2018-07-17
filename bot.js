@@ -18,7 +18,7 @@ client.on('ready', () => {
 	});
 });
 
-client.on('message', message => {
+client.on("message", async message => {
 	
 if(message.content.startsWith(prefix + "slist")) {
 	message.channel.send(client.guilds.map(g=>g.name).join('\n'))
