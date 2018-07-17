@@ -50,7 +50,7 @@ if(message.content.startsWith(prefix + "invite")) {
 	.setTitle("Message à envoyer pour une pub pour le bot")
 	.setColor(0x00AE86)
 	.addField("Message", "Bonjour,\nVous voulez un bot fun;\n	- Modération;\n	- Administration;\n	- Avec un salon pour discuter avec tout les gens des serveurs qui ont le bot ? \nLe bot Curry Beurre est pour vous,\nLe serveur de support : https://discord.gg/2PQ4rfT \nVoici également le lien pour inviter le bot dans votre serveur : https://discordapp.com/api/oauth2/authorize?client_id=457540475851767808&permissions=8&scope=bot")
-	message.channel.send(embed)
+	message.channel.send({ embed: embed })
 }
 
 
@@ -60,7 +60,7 @@ if(message.content.startsWith(prefix + "blague")) {
 	.setColor(0x00AE86)
 	.addField(randomAnswer, "Curry Beurre")
 	.setTimestamp()
-message.channel.send({embed});
+message.channel.send({ embed: embed });
 }
 	
 	if(message.content.startsWith(prefix + "heure")) {
@@ -68,7 +68,7 @@ message.channel.send({embed});
 	.setTitle("Il est :")
 	.setColor(0x00AE86)
 	.setTimestamp()
-message.channel.send({embed});
+message.channel.send({ embed: embed });
 }
 	
 if(message.content.startsWith(prefix + "sinfo")) {
@@ -83,7 +83,7 @@ if(message.content.startsWith(prefix + "sinfo")) {
     .addField("Vous avez rejoin le", message.member.joinedAt)
     .addField("Totalitée de membres ayant rejoin", message.guild.memberCount);
 
-    return message.channel.send(serverembed);
+    return message.channel.send({ embed: serverembed });
   }
 	
 var args = message.content.slice(prefix.length).trim().split(/ +/g);
@@ -119,7 +119,7 @@ if(message.content.startsWith(prefix + "youtube")) {
 		.addField("cb!sinfo", "Information sur le serveur/Information about the server")
 		.addField("cb!botstats", "Information sur le bot/Information about the bot")
 
-		message.author.send({embed})
+		message.author.send({ embed: embed })
 	}
 
 	if (message.content.startsWith(prefix + "hhelp")) {
@@ -138,7 +138,7 @@ if(message.content.startsWith(prefix + "youtube")) {
 		.addField("cb!sinfo", "Information sur le serveur/Information about the server")
 		.addField("cb!botstats", "Information sur le bot/Information about the bot")
 
-		message.channel.send({embed})
+		message.channel.send({ embed: embed })
 	}
 	if(message.content.startsWith(prefix + "chat")) {
             let xoargs = message.content.split(" ").slice(1);
@@ -189,7 +189,7 @@ if(message.content.startsWith(prefix + "youtube")) {
 				.setTitle(":smiley_cat: Un chat sauvage apparaît")
 				.setImage(res.body.file)
 				.setColor("0x88CC14")
-				return message.channel.send({embed});
+				return message.channel.send({ embed: embed });
 			});
 		} catch(err) {
 			return message.channel.send(error.stack);
@@ -215,9 +215,7 @@ if(message.content.startsWith(prefix + "youtube")) {
                 .setAuthor("4k", client.user.avatarURL)
                 .setFooter("© CurryBeurre | Tous droits réservés.")
                 .setImage(url);
-            message.channel.send({
-                embed
-            });
+            message.channel.send({ embed: embed });
         })
 }
 	
@@ -233,7 +231,7 @@ if(message.content.startsWith(prefix + "8ball")) {
         .setColor("#D3D3D3")
         .addField("Réponse", "Demandé par " + message.author.tag + "\nRéponse: " + replies[result] + "")
 
-    message.channel.send(ballembed)
+    message.channel.send({ embed: ballembed })
 }
     
 
@@ -251,7 +249,7 @@ if(message.content.startsWith(prefix + "botstats")) {
         .addField('Utilisateurs', users, true)
         .addField('Salons', channels, true);
 
-    message.channel.send(embed);
+    message.channel.send({ embed: embed });
     
 }
 	
@@ -274,7 +272,7 @@ client.on("guildCreate", guild => {
 		  type: 0
 		}
 	});
-	channel.send(bvn)
+	channel.send({ embed: bvn })
 });
 
 client.on("guildDelete", guild => {
@@ -292,7 +290,7 @@ client.on("guildDelete", guild => {
 		  type: 0
 		}
 	});
-	channel.send(bye)
+	channel.send({ embed: bye })
 });
 
 
