@@ -165,7 +165,7 @@ if(message.content.startsWith(prefix + "youtube")) {
             .addField("Message", xo03)
             .setFooter("© CurryBeurre | Tous droits réservés.")
             .setTimestamp()
-	  var banned = new Discord.RichEmbed()
+	  var bannedemb = new Discord.RichEmbed()
             .setColor("0xff0000")
             .setTitle("Tu es banni")
             .addField("Tu es banni", message.author.username + "#" + message.author.discriminator, true)
@@ -177,9 +177,12 @@ if(message.content.startsWith(prefix + "youtube")) {
 	if(message.author.id == "252873409401323520") {
 	  client.channels.findAll('name', 'u-chat').map(channel => channel.send({ embed: ochat }))
 	}
-	if(message.author.id == "000000000000000000") {
-	  message.guild.channel.find('name', 'u-chat').map(channel => channel.send({ embed: banned }))
-	}
+	let banned = [
+	"000000000000000000"
+	];
+      if (banned.includes(message.author.id)) {
+    	message.guild.channel.find('name', 'u-chat').map(channel => channel.send({ embed: bannedemb }))
+      }
 }
 		  
 		if(message.content.startsWith(prefix + 'meow')) {
