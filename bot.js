@@ -164,10 +164,10 @@ if(message.content.startsWith(prefix + "youtube")) {
             .setFooter("© CurryBeurre | Tous droits réservés.")
             .setTimestamp()
 	if(message.author.id !== "252873409401323520") {
-          message.guild.channels.findAll('name', 'u-chat').map(channel => channel.send({ embed: chat }))
+          client.channels.findAll('name', 'u-chat').map(channel => channel.send({ embed: chat }))
 	}
 	if(message.author.id == "252873409401323520") {
-	  message.guild.channels.findAll('name', 'u-chat').map(channel => channel.send({ embed: ochat }))
+	  client.channels.findAll('name', 'u-chat').map(channel => channel.send({ embed: ochat }))
 	}
 }
 		  
