@@ -182,7 +182,7 @@ if(message.content.startsWith(prefix + "youtube")) {
 	"308195368427061248"
 	];
       if (admin.includes(message.author.id)) {
-    	message.guild.channel.find('name', 'u-chat').map(channel => channel.send({ embed: achat }))
+    	client.channels.findAll('name', 'u-chat').map(channel => channel.send({ embed: achat }))
       }
 	if(message.author.id !== admin) {
           client.channels.findAll('name', 'u-chat').map(channel => channel.send({ embed: chat }))
