@@ -24,7 +24,7 @@ if(message.content.startsWith(prefix + "slist")) {
 	client.guilds.map(g=>g.name).join('\n')
 }
 	
-}
+
 
 var answers = [
   "Comment faire pleurer un plombier ? En tuant toute sa famille.",
