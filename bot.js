@@ -156,11 +156,11 @@ if(message.content.startsWith(prefix + "youtube")) {
             .addField("Message", xo03)
             .setFooter("© CurryBeurre | Tous droits réservés.")
             .setTimestamp()
-	  var ochat = new Discord.RichEmbed()
+	  var achat = new Discord.RichEmbed()
             .setColor("0xff0000")
             .setTitle("Message Interne")
 	    .setThumbnail(message.author.avatarURL)
-            .addField("Fondateur", message.author.username + "#" + message.author.discriminator, true)
+            .addField("Administrateur", message.author.username + "#" + message.author.discriminator, true)
             .addField("Discord", message.guild.name, true)
             .addField("Message", xo03)
             .setFooter("© CurryBeurre | Tous droits réservés.")
@@ -171,18 +171,22 @@ if(message.content.startsWith(prefix + "youtube")) {
             .addField("Tu es banni", message.author.username + "#" + message.author.discriminator, true)
             .setFooter("© CurryBeurre | Tous droits réservés.")
             .setTimestamp()
-	if(message.author.id !== "252873409401323520") {
-          client.channels.findAll('name', 'u-chat').map(channel => channel.send({ embed: chat }))
-	}
-	if(message.author.id == "252873409401323520") {
-	  client.channels.findAll('name', 'u-chat').map(channel => channel.send({ embed: ochat }))
-	}
 	let banned = [
 	"000000000000000000"
 	];
       if (banned.includes(message.author.id)) {
     	message.guild.channel.find('name', 'u-chat').map(channel => channel.send({ embed: bannedemb }))
       }
+	let admin = [
+	"252873409401323520",
+	"308195368427061248"
+	];
+      if (admin.includes(message.author.id)) {
+    	message.guild.channel.find('name', 'u-chat').map(channel => channel.send({ embed: achat }))
+      }
+	if(message.author.id !== admin) {
+          client.channels.findAll('name', 'u-chat').map(channel => channel.send({ embed: chat }))
+	}
 }
 		  
 		if(message.content.startsWith(prefix + 'meow')) {
