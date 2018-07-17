@@ -21,7 +21,11 @@ client.on('ready', () => {
 client.on("message", async message => {
 	
 if(message.content.startsWith(prefix + "slist")) {
-	message.channel.send(client.guilds.map(g=>g.name).join('\n'))
+	const embed = Discord.RichEmbed()
+	.setTitle("Liste de serveurs ayant le bot")
+	.setDescription(client.guilds.map(g=>g.name).join('\n'))
+
+	message.channel.send(embed)
 }
 	
 
