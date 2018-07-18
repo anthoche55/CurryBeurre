@@ -91,14 +91,6 @@ if(message.content.startsWith(prefix + "sinfo")) {
 var args = message.content.slice(prefix.length).trim().split(/ +/g);
  
 if(message.content.startsWith(prefix + "avatar")) {
-    if (args.join(" ") == "") {
-	let image = message.author.displayAvatarURL;
-        let embed = new Discord.RichEmbed()
-            .setAuthor(`${message.author.username}#${message.author.discriminator}`)
-            .setColor("RANDOM")
-            .setImage(image)
-	message.channel.send({ embed: embed });
-    } else {
         let user = message.mentions.users.first();
         let image = user.displayAvatarURL;
         let embed = new Discord.RichEmbed()
@@ -106,7 +98,6 @@ if(message.content.startsWith(prefix + "avatar")) {
             .setColor("RANDOM")
             .setImage(image)
         message.channel.send({ embed: embed });
-    }
 }
  
 if(message.content.startsWith(prefix + "google")) {
