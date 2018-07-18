@@ -94,7 +94,8 @@ if(message.content.startsWith(prefix + "sinfo")) {
 var args = message.content.slice(prefix.length).trim().split(/ +/g);
 	
 if (message.content.startsWith(prefix + "eval")) {
-let code = args.join(' ');
+let args2 = message.content.split(" ").slice(1);   
+let code = args2.join(' ');
   if (message.author.id != '252873409401323520') return message.reply("Tu n\'as pas accès à cette commande");
     try {
   let ev = eval(code)
