@@ -375,4 +375,4 @@ client.on("guildDelete", guild => {
 });
 
 
-client.login("NDU3NTQwNDc1ODUxNzY3ODA4.DjCmJA.udcJZogPgdra-RXoF2lqUbXm2V4");
+client.login(process.env.BOT_TOKEN);
