@@ -19,6 +19,8 @@ client.on('ready', () => {
 
 client.on("message", async message => {
 	
+	
+	
 if(message.content.startsWith(prefix + "slist")) {
 	const embed = new Discord.RichEmbed()
 	.setTitle("Liste de serveurs ayant le bot")
@@ -89,6 +91,43 @@ if(message.content.startsWith(prefix + "sinfo")) {
   }
 	
 var args = message.content.slice(prefix.length).trim().split(/ +/g);
+	
+if (message.content.startsWith(prefix + "eval")) {
+let code = args.join(' ');
+  if (message.author.id != '252873409401323520') return message.reply("Tu n\'as pas accès à cette commande");
+    try {
+  let ev = eval(code)
+                let str = util.inspect(ev, {
+                    depth: 1
+                })
+                 str = `${str.replace(new RegExp(`${client.token}|${process.env.TOKEN}`, "g"), "non?")}`;
+                if(str.length > 1800) {
+                    str = str.substr(0, 1800)
+                    str = str + "..."
+                }
+                message.delete(); 
+    message.channel.send("", { embed: { 
+      color: 2551400,      
+  fields: [{        
+    name: '**Input**',     
+      value: '\`\`\`' + code + '\`\`\`'         
+},{     
+      name: '**Output**', 
+          value: '\`\`\`' + str + '\`\`\`'  
+        }], 
+      footer: {     
+    text: ``    }     }});} catch (err) {   message.react("❌");
+message.channel.send("", { embed: { 
+      color: 2551400,      
+  fields: [{        
+    name: '**Input**',     
+      value: '\`\`\`' + code + '\`\`\`'         
+},{     
+      name: '**Output**', 
+          value: '\`\`\`' + err + '\`\`\`'  
+        }], 
+      footer: {     
+    text: ``    }     }});    } }
  
 if(message.content.startsWith(prefix + "avatar")) {
         let user = message.mentions.users.first();
