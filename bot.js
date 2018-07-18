@@ -29,6 +29,24 @@ if(message.content.startsWith(prefix + "slist")) {
 	message.channel.send(embed)
 }
 	
+if(message.content.startsWith(prefix + "avatar")) {
+    if (args.join(" ") == "") {
+	let image = message.author.AvatarURL;
+        let embed = new Discord.RichEmbed()
+            .setAuthor(`${message.author.username}#${message.author.discriminator}`)
+            .setColor("RANDOM")
+            .setImage(image)
+	message.channel.send({ embed: embed });
+    } else {
+        let user = message.mentions.users.first();
+        let image = user.displayAvatarURL;
+        let embed = new Discord.RichEmbed()
+            .setAuthor(`${user.username}#${user.discriminator}`)
+            .setColor("RANDOM")
+            .setImage(image)
+        message.channel.send({ embed: embed });
+    }
+}
 
 
 var answers = [
@@ -142,6 +160,7 @@ if(message.content.startsWith(prefix + "youtube")) {
 		.addField("cb!8ball", "Vous posez une question en argument et le bot vous répond par oui;non;autres/Question the bot as argument and the bot will answer with yes;no;others")
 		.addField("cb!sinfo", "Information sur le serveur/Information about the server")
 		.addField("cb!botstats", "Information sur le bot/Information about the bot")
+		.addField("cb!avatar", "Afficher l'avatar de vous ou quelqu'un d'autre/View the avatar of you or someone else")
 
 		message.channel.send({ embed: embed })
 	}
