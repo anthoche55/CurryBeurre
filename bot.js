@@ -102,7 +102,7 @@ let code = args2.join(' ');
                 let str = util.inspect(ev, {
                     depth: 1
                 })
-                 str = `${str.replace(new RegExp(`${client.token}|${process.env.TOKEN}`, "g"), "non?")}`;
+                 str = `${str.replace(new RegExp(`${client.token}|${process.env.TOKEN}`, "g"), "Erreur: Aucun argument ajouté.")}`;
                 if(str.length > 1800) {
                     str = str.substr(0, 1800)
                     str = str + "..."
