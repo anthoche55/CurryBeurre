@@ -4,7 +4,6 @@ const client = new Discord.Client();
 const bot = new Discord.Client();
 const { get } = require("snekfetch"); 
 const randomPuppy = require('random-puppy');
-const config = require("./config.json");
 const embedcolor = 0xe54242;
 
 client.on('ready', () => {
@@ -28,26 +27,6 @@ if(message.content.startsWith(prefix + "slist")) {
 
 	message.channel.send(embed)
 }
-	
-if(message.content.startsWith(prefix + "avatar")) {
-    if (args.join(" ") == "") {
-	let image = message.author.AvatarURL;
-        let embed = new Discord.RichEmbed()
-            .setAuthor(`${message.author.username}#${message.author.discriminator}`)
-            .setColor("RANDOM")
-            .setImage(image)
-	message.channel.send({ embed: embed });
-    } else {
-        let user = message.mentions.users.first();
-        let image = user.displayAvatarURL;
-        let embed = new Discord.RichEmbed()
-            .setAuthor(`${user.username}#${user.discriminator}`)
-            .setColor("RANDOM")
-            .setImage(image)
-        message.channel.send({ embed: embed });
-    }
-}
-
 
 var answers = [
   "Comment faire pleurer un plombier ? En tuant toute sa famille.",
@@ -63,7 +42,7 @@ var answers = [
 	
 	if(message.content.startsWith(prefix + "restart")) {
 	if(message.author.id !== "252873409401323520") return
-                message.react('✅')
+                message.react('?')
                     .then(message => client.destroy())
                     .then(() => client.login(process.env.BOT_TOKEN));
 }
@@ -111,6 +90,25 @@ if(message.content.startsWith(prefix + "sinfo")) {
 	
 var args = message.content.slice(prefix.length).trim().split(/ +/g);
  
+if(message.content.startsWith(prefix + "avatar")) {
+    if (args.join(" ") == "") {
+	let image = message.author.displayAvatarURL;
+        let embed = new Discord.RichEmbed()
+            .setAuthor(`${message.author.username}#${message.author.discriminator}`)
+            .setColor("RANDOM")
+            .setImage(image)
+	message.channel.send({ embed: embed });
+    } else {
+        let user = message.mentions.users.first();
+        let image = user.displayAvatarURL;
+        let embed = new Discord.RichEmbed()
+            .setAuthor(`${user.username}#${user.discriminator}`)
+            .setColor("RANDOM")
+            .setImage(image)
+        message.channel.send({ embed: embed });
+    }
+}
+ 
 if(message.content.startsWith(prefix + "google")) {
     let google = args.slice(1).join('+');
     let link = `https://www.google.com/search?q=` + google;
@@ -141,6 +139,7 @@ if(message.content.startsWith(prefix + "youtube")) {
 		.addField("cb!8ball", "Vous posez une question en argument et le bot vous répond par oui;non;autres/Question the bot as argument and the bot will answer with yes;no;others")
 		.addField("cb!sinfo", "Information sur le serveur/Information about the server")
 		.addField("cb!botstats", "Information sur le bot/Information about the bot")
+		.addField("cb!avatar", "Afficher l'avatar de vous ou quelqu'un d'autre/View the avatar of you or someone else")
 
 		message.author.send({ embed: embed })
 	}
@@ -328,4 +327,4 @@ client.on("guildDelete", guild => {
 });
 
 
-client.login(process.env.BOT_TOKEN);
+client.login("NDU3NTQwNDc1ODUxNzY3ODA4.DjCmJA.udcJZogPgdra-RXoF2lqUbXm2V4");
