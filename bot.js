@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const prefix = "cb!";
+const prefix = "&";
 const client = new Discord.Client();
 const bot = new Discord.Client();
 const { get } = require("snekfetch"); 
