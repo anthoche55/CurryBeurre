@@ -15,21 +15,10 @@ let admin = [
 	"308195368427061248"
 ];
 
-var presences = [
-    "&help | Commande d\'aide",
-    `${client.guilds.size} serveurs | ${client.users.size} membres`,
-    "&chat <message> | Dans le salon #u-chat pour parler avec tout le monde",
-    "CurryDev, t\'es où gros ?"
-]
-
 client.on('ready', () => {
     console.log('I am ready!');
     client.user.setStatus('idle')
-    client.user.setActivity(utils.randItemFromArray(presences)).then(() => {
-        setTimeout(() => {
-            client.user.setActivity(utils.randItemFromArray(presences))
-        }, 60)
-    })
+    client.user.setActivity("&help | ${client.guilds.size} serveurs | ${client.users.size} membres")
 });
 
 client.on("message", async message => {
