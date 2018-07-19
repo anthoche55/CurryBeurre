@@ -278,6 +278,7 @@ if(message.content.startsWith(prefix + "youtube")) {
 }
 
 if(message.content.startsWith(prefix + "ftn")) {
+let msg = message;
 const Fortnite = require('fortnite');
 const stats = new Fortnite("6e09b3a6-d09b-4d15-9b29-ccf3e83f82e7");
 const Discord = require('discord.js');
