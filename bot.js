@@ -293,7 +293,7 @@ const Discord = require('discord.js');
         username = args.join(' ');
 
         stats.user(username, platform).then(data => {
-                    const embed = new Discord.RichEmbed()
+                    const ftn = new Discord.RichEmbed()
                         .setColor(0xffffff)
                         .setTitle(`Statistiques pour ${data.username}`)
                         .addField('Score total', data.lifetimeStats[6].value, true)
@@ -306,7 +306,7 @@ const Discord = require('discord.js');
                         .addField('Temps joué', data.lifetimeStats[13].value, true)
                         .addField('Temps de survie moyen', data.lifetimeStats[14].value, true)
 
-                    msg.channel.send(embed)
+                    msg.channel.send({ embed: ftn })
                         .catch(error => {
 
                             msg.channel.send('<:erreur:444764175126757376> Utilisateur invalide !');
