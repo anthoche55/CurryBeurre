@@ -6,6 +6,7 @@ const { get } = require("snekfetch");
 const randomPuppy = require('random-puppy');
 const embedcolor = 0xe54242;
 var util = require('util')
+var utils = require('bot-utils')
 
 let fonda = [
 	"252873409401323520"
