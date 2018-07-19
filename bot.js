@@ -28,7 +28,7 @@ client.on('ready', () => {
     client.user.setActivity(utils.randItemFromArray(presences)).then(() => {
         setTimeout(() => {
             client.user.setActivity(utils.randItemFromArray(presences))
-        }, 600000)
+        }, 60)
     })
 });
 
