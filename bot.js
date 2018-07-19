@@ -388,6 +388,30 @@ if(message.content.startsWith(prefix + "removerole")) {
   }
 }
 	
+	
+if(message.content.startsWith(prefix + "report")) {
+    let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if(!rUser) return message.channel.send("Je ne peux pas trouver l\'utilisateur");
+    let rreason = args.join(" ").slice(22);
+
+    let reportEmbed = new Discord.RichEmbed()
+    .setDescription("Reports")
+    .setColor("#15f153")
+    .addField("Utilisateur report", `${rUser} comme ID: ${rUser.id}`)
+    .addField("Report par", `${message.author} comme ID: ${message.author.id}`)
+    .addField("Salon", message.channel)
+    .addField("Temps", message.createdAt)
+    .addField("Reason", rreason);
+
+    let reportschannel = message.guild.channels.find(`name`, "logs");
+    if(!reportschannel) return message.channel.send("Je ne peux pas trouver le salon #logs");
+
+
+    message.delete().catch(O_o=>{});
+    reportschannel.send({ embed: reportEmbed });
+
+}
+	
 });
 	
 	
