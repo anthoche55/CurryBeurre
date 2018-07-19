@@ -18,7 +18,7 @@ let admin = [
 client.on('ready', () => {
     console.log('I am ready!');
     client.user.setStatus('idle')
-    client.user.setActivity("&help | ${client.guilds.size} serveurs | ${client.users.size} membres")
+    client.user.setActivity(`&help | ${client.guilds.size} serveurs | ${client.users.size} membres`)
 });
 
 client.on("message", async message => {
