@@ -42,11 +42,10 @@ if(message.content.startsWith(prefix + "uptime")) {
 	
 if(message.content.startsWith(prefix + "slist")) {
 	const embed = new Discord.RichEmbed()
-	.setTitle("Liste de serveurs ayant le bot")
+	.setTitle("Je suis sur" + bot.guilds.size + "serveurs, voici la liste :")
 	.setDescription(client.guilds.map(g=>g.name).join('\n'))
-	.setImage(client.user.avatarUrl)
 
-	message.channel.send(embed)
+	message.channel.send({ embed: embed })
 }
 
 var answers = [
