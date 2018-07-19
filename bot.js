@@ -286,8 +286,8 @@ const Discord = require('discord.js');
         let platform;
         let username;
 
-        if (!['pc', 'xbl', 'psn'].includes(args[0])) return msg.channel.send('<:information:444764187831304202> **Merci d\'utiliser: `!fortnite [ pc | xbl | psn ] <username>`**');
-        if (!args[1]) return msg.channel.send('<:information:444764187831304202> **Merci d\'entrer le nom d\'utilisateur: `&fortnite [ pc | xbl | psn ] <username>`**');
+        if (!['pc', 'xbl', 'psn'].includes(args[0])) return msg.channel.send('<:information:444764187831304202> **Merci d\'utiliser: `&ftn [ pc | xbl | psn ] <utilisateur>`**');
+        if (!args[1]) return msg.channel.send('<:information:444764187831304202> **Merci d\'entrer le nom d\'utilisateur: `&ftn [ pc | xbl | psn ] <itilisateur>`**');
 
         platform = args.shift();
         username = args.join(' ');
