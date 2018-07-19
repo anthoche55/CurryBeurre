@@ -276,44 +276,21 @@ if(message.content.startsWith(prefix + "youtube")) {
 		}	
 	}
 }
-
-if(message.content.startsWith(prefix + "ftn")) {
-let msg = message;
-const Fortnite = require('fortnite');
-const stats = new Fortnite("6e09b3a6-d09b-4d15-9b29-ccf3e83f82e7");
-const Discord = require('discord.js');
-
-        let platform;
-        let username;
-
-        if (!['pc', 'xbl', 'psn'].includes(args[0])) return msg.channel.send('<:information:444764187831304202> **Merci d\'utiliser: `&ftn [ pc | xbl | psn ] <utilisateur>`**');
-        if (!args[1]) return msg.channel.send('<:information:444764187831304202> **Merci d\'entrer le nom d\'utilisateur: `&ftn [ pc | xbl | psn ] <itilisateur>`**');
-
-        platform = args.shift();
-        username = args.join(' ');
-
-        stats.user(username, platform).then(data => {
-                    const ftn = new Discord.RichEmbed()
-                        .setColor(0xffffff)
-                        .setTitle(`Statistiques pour ${data.username}`)
-                        .addField('Score total', data.lifetimeStats[6].value, true)
-                        .addField('Match joué', data.lifetimeStats[7].value, true)
-                        .addField('Wins', data.lifetimeStats[8].value, true)
-                        .addField('Win %', data.lifetimeStats[9].value, true)
-                        .addField('Kills', data.lifetimeStats[10].value, true)
-                        .addField('K/D Ratio', data.lifetimeStats[11].value, true)
-                        .addField('Kills par minute', data.lifetimeStats[12].value, true)
-                        .addField('Temps joué', data.lifetimeStats[13].value, true)
-                        .addField('Temps de survie moyen', data.lifetimeStats[14].value, true)
-
-                    msg.channel.send({ embed: ftn })
-                        .catch(error => {
-
-                            msg.channel.send('<:erreur:444764175126757376> Utilisateur invalide !');
-
-                        })
-
-                })}
+	
+if(message.content.startsWith(prefix + "membercount")) {
+      const hexcols = [0xFFB6C1, 0x4C84C0, 0xAD1A2C, 0x20b046, 0xf2e807, 0xf207d1, 0xee8419, 0x8a2be2];
+      const embed = new Discord.RichEmbed()
+          .setColor(hexcols[~~(Math.random() * hexcols.length)])
+          .setAuthor(message.guild.name, message.guild.iconURL)
+      .setThumbnail(message.guild.iconURL)
+      .addField('Membres', `**${message.guild.memberCount}**`, true)
+      .addBlankField(true)
+      .addField('Humains', `**${message.guild.members.filter(member => !member.user.bot).size}**`, true)
+      .addField('Bots', `**${message.guild.members.filter(member => member.user.bot).size}**`, true)
+      .addField('Status', `**${message.guild.members.filter(o => o.presence.status === 'online').size}** En ligne\n**${msg.guild.members.filter(i => i.presence.status === 'idle').size}** Absent\n**${msg.guild.members.filter(dnd => dnd.presence.status === 'dnd').size}** Ne pas déranger\n**${msg.guild.members.filter(off => off.presence.status === 'offline').size}** Hors Ligne\n**${msg.guild.members.filter(s => s.presence.status === 'streaming').size}** En live`)
+      .setFooter(`Propriétaire: ${message.guild.owner.user.tag}`)
+    msg.channel.send(embed);
+  };
 		  
 		if(message.content.startsWith(prefix + 'meow')) {
 		try {
