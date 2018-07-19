@@ -154,35 +154,27 @@ if(message.content.startsWith(prefix + "pizza")) {
         .setTitle(`Choisi un type de pizza.`)
         .setColor(`RANDOM`)
         .setDescription('Nous avons: `peperoni`, `fromage`, and `ananas`');
-    message.channel.send({ 
-	    	embed: ahkEmbed 
-    	    })
-        if (message.content.startsWith("peperoni")) {
+    message.channel.send({ embed: ahkEmbed })
+        if (message.content.startsWith("pizza peperoni")) {
             const ahkkEmbed = new Discord.RichEmbed()
                 .setTitle(`Voilà ta pizza peperoni`)
                 .setColor(`RANDOM`)
                 .setImage(`http://www.pngmart.com/files/1/Pepperoni-Pizza.png`)
-            message.channel.send({
-                embed: ahkkEmbed
-            })
-            return;
-        } else if (message.content.startsWith("fromage")) {
+            message.channel.send({ embed: ahkkEmbed })
+	}
+	if(message.content.startsWith("pizza fromage")) {
             const ahkkkEmbed = new Discord.RichEmbed()
                 .setTitle(`Voilà ta pizza fromage`)
                 .setColor(`RANDOM`)
                 .setImage(`http://www.pngmart.com/files/1/Cheese-Pizza.png`)
-            message.channel.send({
-                embed: ahkkkEmbed
-            })
-
-        } else if (msg.content.startsWith("ananas")) {
+            message.channel.send({ embed: ahkkkEmbed })
+	}
+	if(message.content.startsWith("pizza ananas")) {
                         const ahkkkkEmbed = new Discord.RichEmbed()
                             .setTitle(`Voilà ta pizza ananas`)
                             .setColor(`RANDOM`)
                             .setImage(`https://www.cicis.com/media/1140/pizza_adven_hampineapple.png`)
-                        message.channel.send({
-                            embed: ahkkkkEmbed
-                        })
+                        message.channel.send({ embed: ahkkkkEmbed })
 		}
  
 if(message.content.startsWith(prefix + "avatar")) {
