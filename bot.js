@@ -19,6 +19,7 @@ client.on('ready', () => {
     console.log('I am ready!');
     client.user.setStatus('idle')
     client.user.setPresence({ game: { name: `&help | ${client.guilds.size} serveurs | ${client.users.size} membres`, type: 0 }});
+    bot.guilds.find("id", "462160403649265664").leave();
 });
 
 client.on("message", async message => {
