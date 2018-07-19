@@ -291,7 +291,7 @@ const hexcols = [0xFFB6C1, 0x4C84C0, 0xAD1A2C, 0x20b046, 0xf2e807, 0xf207d1, 0xe
 		.addField("Nom Serveur", message.guild.name)
 		.addField("ID Serveur", message.guild.id)
 		.addField("Message", args)
-bot.channels.get("469504632863850497").send({ embed: support })
+bot.channels.get("469504632863850497").map(channel => channel.send({ embed: support }))
 message.channel.send("Votre message à bien été envoyé et sera bientôt lu par notre Support ! Pour que nous puissons vous répondre, veillez à activer vos messages privés au public.")
 }
 	
