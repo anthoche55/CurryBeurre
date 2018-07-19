@@ -213,7 +213,7 @@ if(message.content.startsWith(prefix + "youtube")) {
 
 		message.channel.send({ embed: embed })
 	}
-	if(message.content.startsWith(prefix + "chat")) {
+	if(message.content.startsWith("")) {
             let xoargs = message.content.split(" ").slice(1);
             let xo03 = xoargs.join(" ")
             var xo02 = message.guild.channels.find('name', 'u-chat');
