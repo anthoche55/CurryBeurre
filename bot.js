@@ -444,7 +444,7 @@ client.on("guildCreate", guild => {
 	  .setAuthor("J\'ai été invité dans un serveur", guild.iconURL)
 	  .addField("Nom du serveur", guild.name)
 	  .addField("Membres", guild.memberCount)
-	  .addField("Owner du serveur", guild.owner)
+	  .addField("Owner du serveur", guild.owner.username + "#" + guild.owner.discriminator)
 	  .addField("ID", guild.id)
 	client.user.setPresence({
 		game: {
