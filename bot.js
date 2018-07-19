@@ -147,6 +147,43 @@ message.channel.send("", { embed: {
         }], 
       footer: {     
     text: ``    }     }});    } }
+	
+	
+if(message.content.startsWith(prefix + "pizza")) {
+    const ahkEmbed = new Discord.RichEmbed()
+        .setTitle(`Choisi un type de pizza.`)
+        .setColor(`RANDOM`)
+        .setDescription('Nous avons: `peperoni`, `fromage`, and `ananas`');
+    message.channel.send({ 
+	    	embed: ahkEmbed 
+    	    })
+        if (message.content.startsWith("peperoni")) {
+            const ahkkEmbed = new Discord.RichEmbed()
+                .setTitle(`Voilà ta pizza peperoni`)
+                .setColor(`RANDOM`)
+                .setImage(`http://www.pngmart.com/files/1/Pepperoni-Pizza.png`)
+            message.channel.send({
+                embed: ahkkEmbed
+            })
+            return;
+        } else if (message.content.startsWith("fromage")) {
+            const ahkkkEmbed = new Discord.RichEmbed()
+                .setTitle(`Voilà ta pizza fromage`)
+                .setColor(`RANDOM`)
+                .setImage(`http://www.pngmart.com/files/1/Cheese-Pizza.png`)
+            message.channel.send({
+                embed: ahkkkEmbed
+            })
+
+        } else if (msg.content.startsWith("ananas")) {
+                        const ahkkkkEmbed = new Discord.RichEmbed()
+                            .setTitle(`Voilà ta pizza ananas`)
+                            .setColor(`RANDOM`)
+                            .setImage(`https://www.cicis.com/media/1140/pizza_adven_hampineapple.png`)
+                        message.channel.send({
+                            embed: ahkkkkEmbed
+                        })
+		}
  
 if(message.content.startsWith(prefix + "avatar")) {
         let user = message.mentions.users.first();
@@ -177,18 +214,7 @@ if(message.content.startsWith(prefix + "youtube")) {
 		const embed = new Discord.RichEmbed()
 		.setColor(0x954D23)
 		.setTitle("Command List:")
-		.addField("cb!help", "Cette commande/this command")
-		.addField("cb!blague", "Raconter une blague/Tell you a joke")
-		.addField("cb!heure", "Donner l'heure actuelle/Gives you the time")
-		.addField("cb!google", "Cherche votre argument sur Google/Search your argument on Google")
-		.addField("cb!youtube", "Chercher votre argument sur YouTube/Search your argument on Youtube")
-		.addField("cb!chat", "Chatter avec d'autres serveurs/Chat with other servers that have the bot")
-		.addField("cb!meow", "Images de chats au hasard/Random pictures of cats")
-		.addField("cb!4k", "IMPORTANT : CONTENUE PORNOGRAPHIQUE PAS ENDESSOUS DE 18 ANS/IMPORTANT : PORNO NOT UNDER 18 YEARS")
-		.addField("cb!8ball", "Vous posez une question en argument et le bot vous répond par oui;non;autres/Question the bot as argument and the bot will answer with yes;no;others")
-		.addField("cb!sinfo", "Information sur le serveur/Information about the server")
-		.addField("cb!botstats", "Information sur le bot/Information about the bot")
-		.addField("cb!avatar", "Afficher l'avatar de vous ou quelqu'un d'autre/View the avatar of you or someone else")
+		.addField("Fun", "&help fun")
 
 		message.author.send({ embed: embed })
 	}
