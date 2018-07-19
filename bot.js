@@ -287,9 +287,9 @@ if(message.content.startsWith(prefix + "membercount")) {
       .addBlankField(true)
       .addField('Humains', `**${message.guild.members.filter(member => !member.user.bot).size}**`, true)
       .addField('Bots', `**${message.guild.members.filter(member => member.user.bot).size}**`, true)
-      .addField('Status', `**${message.guild.members.filter(o => o.presence.status === 'online').size}** En ligne\n**${msg.guild.members.filter(i => i.presence.status === 'idle').size}** Absent\n**${msg.guild.members.filter(dnd => dnd.presence.status === 'dnd').size}** Ne pas déranger\n**${msg.guild.members.filter(off => off.presence.status === 'offline').size}** Hors Ligne\n**${msg.guild.members.filter(s => s.presence.status === 'streaming').size}** En live`)
+      .addField('Status', `**${message.guild.members.filter(o => o.presence.status === 'online').size}** En ligne\n**${message.guild.members.filter(i => i.presence.status === 'idle').size}** Absent\n**${message.guild.members.filter(dnd => dnd.presence.status === 'dnd').size}** Ne pas déranger\n**${message.guild.members.filter(off => off.presence.status === 'offline').size}** Hors Ligne\n**${message.guild.members.filter(s => s.presence.status === 'streaming').size}** En live`)
       .setFooter(`Propriétaire: ${message.guild.owner.user.tag}`)
-    msg.channel.send(embed);
+    message.channel.send({ embed: embed });
   };
 		  
 		if(message.content.startsWith(prefix + 'meow')) {
