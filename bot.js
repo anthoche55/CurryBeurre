@@ -277,8 +277,25 @@ if(message.content.startsWith(prefix + "youtube")) {
 	}
 }
 	
+if(message.content.startsWith(prefix + "support")) {
+var argus = message.content.split(" ");
+argus.splice(0, 1);
+argus = args.join(" ");
+const hexcols = [0xFFB6C1, 0x4C84C0, 0xAD1A2C, 0x20b046, 0xf2e807, 0xf207d1, 0xee8419, 0x8a2be2];
+	if (!argus) return message.channel.send("Veillez à mettre une raison pour envoyer un message au Support.")
+	const support = new Discord.RichEmbed()
+		.setColor(hexcols[~~(Math.random() * hexcols.length)])
+		.setTitle("Support")
+		.addField("Username", message.author.username)
+		.addField("ID", message.author.id)
+		.addField("Nom Serveur", message.guild.name)
+		.addField("ID Serveur", message.guild.id)
+		.addField("Message", args)
+bot.channels.get("469504632863850497").send({ embed: support })
+message.channel.send("Votre message à bien été envoyé et sera bientôt lu par notre Support ! Pour que nous puissons vous répondre, veillez à activer vos messages privés au public.")
+}
+	
 if(message.content.startsWith(prefix + "membercount")) {
-      const hexcols = [0xFFB6C1, 0x4C84C0, 0xAD1A2C, 0x20b046, 0xf2e807, 0xf207d1, 0xee8419, 0x8a2be2];
       const embed = new Discord.RichEmbed()
           .setColor(hexcols[~~(Math.random() * hexcols.length)])
           .setAuthor(message.guild.name, message.guild.iconURL)
