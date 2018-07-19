@@ -276,6 +276,43 @@ if(message.content.startsWith(prefix + "youtube")) {
 		}	
 	}
 }
+
+if(message.content.startsWith(prefix + "ftn")) {
+const Fortnite = require('fortnite');
+const stats = new Fortnite("6e09b3a6-d09b-4d15-9b29-ccf3e83f82e7");
+const Discord = require('discord.js');
+
+        let platform;
+        let username;
+
+        if (!['pc', 'xbl', 'psn'].includes(args[0])) return msg.channel.send('<:information:444764187831304202> **Merci d\'utiliser: `!fortnite [ pc | xbl | psn ] <username>`**');
+        if (!args[1]) return msg.channel.send('<:information:444764187831304202> **Merci d\'entrer le nom d\'utilisateur: `&fortnite [ pc | xbl | psn ] <username>`**');
+
+        platform = args.shift();
+        username = args.join(' ');
+
+        stats.user(username, platform).then(data => {
+                    const embed = new Discord.RichEmbed()
+                        .setColor(0xffffff)
+                        .setTitle(`Statistiques pour ${data.username}`)
+                        .addField('Score total', data.lifetimeStats[6].value, true)
+                        .addField('Match joué', data.lifetimeStats[7].value, true)
+                        .addField('Wins', data.lifetimeStats[8].value, true)
+                        .addField('Win %', data.lifetimeStats[9].value, true)
+                        .addField('Kills', data.lifetimeStats[10].value, true)
+                        .addField('K/D Ratio', data.lifetimeStats[11].value, true)
+                        .addField('Kills par minute', data.lifetimeStats[12].value, true)
+                        .addField('Temps joué', data.lifetimeStats[13].value, true)
+                        .addField('Temps de survie moyen', data.lifetimeStats[14].value, true)
+
+                    msg.channel.send(embed)
+                        .catch(error => {
+
+                            msg.channel.send('<:erreur:444764175126757376> Utilisateur invalide !');
+
+                        })
+
+                })}
 		  
 		if(message.content.startsWith(prefix + 'meow')) {
 		try {
