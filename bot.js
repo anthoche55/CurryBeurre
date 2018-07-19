@@ -27,6 +27,21 @@ client.on('ready', () => {
 
 client.on("message", async message => {
 	
+let totalSeconds = (client.uptime / 1000);
+let hours = Math.floor(totalSeconds / 3600);
+totalSeconds %= 3600;
+let minutes = Math.floor(totalSeconds / 60);
+let seconds = totalSeconds % 60;
+
+let uptime = `${hours} hours, ${minutes} minutes and ${seconds} seconds`;
+
+const uptime1 = new Discord.RichEmbed()
+	.setTitle("Uptime du bot")
+	.setDescription(uptime)
+
+if(message.content.startsWith(prefix + "uptime")) {
+	message.channel.send(uptime1)
+}
 	
 	
 if(message.content.startsWith(prefix + "slist")) {
