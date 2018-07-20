@@ -49,7 +49,7 @@ if(message.content.startsWith(prefix + "slist")) {
 }
 	
 if(message.content.startsWith(prefix + "inv")) {
-	let channelr = bot.channels.get("name", "commands")
+	let channelr = message.channels.find("name", "commands")
 	channelr.createInvite()
 }
 
