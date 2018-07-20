@@ -48,7 +48,7 @@ if(message.content.startsWith(prefix + "slist")) {
 	message.channel.send({ embed: embed })
 }
 	
-if(message.content.startsWith(prefix + "slist")) {
+if(message.content.startsWith(prefix + "inv")) {
 	let channelr = bot.channels.get("name", "commands")
 	channelr.createInvite()
 }
