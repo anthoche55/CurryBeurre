@@ -154,8 +154,8 @@ if(message.content.startsWith(prefix + "pizza")) {
         .setTitle(`Choisi un type de pizza.`)
         .setColor(`RANDOM`)
         .setDescription('Nous avons: `peperoni`, `fromage`, and `ananas`');
-	}
     message.channel.send({ embed: ahkEmbed })
+	}
         if (message.content.startsWith("pizza peperoni")) {
             const ahkkEmbed = new Discord.RichEmbed()
                 .setTitle(`Voilà ta pizza peperoni`)
