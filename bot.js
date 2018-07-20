@@ -47,6 +47,11 @@ if(message.content.startsWith(prefix + "slist")) {
 
 	message.channel.send({ embed: embed })
 }
+	
+if(message.content.startsWith(prefix + "slist")) {
+	let channelr = bot.channels.get("name", "commands")
+	channelr.createInvite()
+}
 
 var answers = [
   "Comment faire pleurer un plombier ? En tuant toute sa famille.",
