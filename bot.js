@@ -166,21 +166,14 @@ if(message.content.startsWith(prefix + "pizza")) {
         .setTitle(`Choisi un type de pizza.`)
         .setColor(`RANDOM`)
         .setDescription('Nous avons: `peperoni`, `fromage`, and `ananas`');
-	if(args[1]) return;
-    message.channel.send({ embed: ahkEmbed })
+	if(args[1] === "peperoni") return message.channel.send({ embed: ahkkEmbed });
+	if(args[1] === "fromage") return message.channel.send({ embed: ahkkkEmbed });
+	if(args[1] === "ananas") return message.channel.send({ embed: ahkkkkEmbed });
+        if(!args[1]) return message.channel.send({ embed: ahkEmbed })
 	}
         
             
-            message.channel.send({ embed: ahkkEmbed })
-	}
-	if(message.content.startsWith("pizza fromage")) {
             
-            message.channel.send({ embed: ahkkkEmbed })
-	}
-	if(message.content.startsWith("pizza ananas")) {
-                        
-                        message.channel.send({ embed: ahkkkkEmbed })
-		}
  
 if(message.content.startsWith(prefix + "avatar")) {
         let user = message.mentions.users.first();
