@@ -150,6 +150,18 @@ message.channel.send("", { embed: {
 	
 	
 if(message.content.startsWith(prefix + "pizza")) {
+	const ahkkEmbed = new Discord.RichEmbed()
+                .setTitle(`Voilà ta pizza peperoni`)
+                .setColor(`RANDOM`)
+                .setImage(`http://www.pngmart.com/files/1/Pepperoni-Pizza.png`)
+	const ahkkkEmbed = new Discord.RichEmbed()
+                .setTitle(`Voilà ta pizza fromage`)
+                .setColor(`RANDOM`)
+                .setImage(`http://www.pngmart.com/files/1/Cheese-Pizza.png`)
+	const ahkkkkEmbed = new Discord.RichEmbed()
+                            .setTitle(`Voilà ta pizza ananas`)
+                            .setColor(`RANDOM`)
+                            .setImage(`https://www.cicis.com/media/1140/pizza_adven_hampineapple.png`)
     const ahkEmbed = new Discord.RichEmbed()
         .setTitle(`Choisi un type de pizza.`)
         .setColor(`RANDOM`)
@@ -157,25 +169,16 @@ if(message.content.startsWith(prefix + "pizza")) {
 	if(args[1]) return;
     message.channel.send({ embed: ahkEmbed })
 	}
-        if(args[1] === "peperoni") {
-            const ahkkEmbed = new Discord.RichEmbed()
-                .setTitle(`Voilà ta pizza peperoni`)
-                .setColor(`RANDOM`)
-                .setImage(`http://www.pngmart.com/files/1/Pepperoni-Pizza.png`)
+        
+            
             message.channel.send({ embed: ahkkEmbed })
 	}
 	if(message.content.startsWith("pizza fromage")) {
-            const ahkkkEmbed = new Discord.RichEmbed()
-                .setTitle(`Voilà ta pizza fromage`)
-                .setColor(`RANDOM`)
-                .setImage(`http://www.pngmart.com/files/1/Cheese-Pizza.png`)
+            
             message.channel.send({ embed: ahkkkEmbed })
 	}
 	if(message.content.startsWith("pizza ananas")) {
-                        const ahkkkkEmbed = new Discord.RichEmbed()
-                            .setTitle(`Voilà ta pizza ananas`)
-                            .setColor(`RANDOM`)
-                            .setImage(`https://www.cicis.com/media/1140/pizza_adven_hampineapple.png`)
+                        
                         message.channel.send({ embed: ahkkkkEmbed })
 		}
  
