@@ -16,6 +16,7 @@
     "quick.hook": "1.4.2",
     "util": "0.11.0",
     "fortnite": "4.1.1",
-    "bot-utils": "1.2.0"
+    "bot-utils": "1.2.0",
+    "ms": "2.1.1"
   }
 }
