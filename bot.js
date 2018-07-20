@@ -154,6 +154,7 @@ if(message.content.startsWith(prefix + "pizza")) {
         .setTitle(`Choisi un type de pizza.`)
         .setColor(`RANDOM`)
         .setDescription('Nous avons: `peperoni`, `fromage`, and `ananas`');
+	if(args[1]) return;
     message.channel.send({ embed: ahkEmbed })
 	}
         if(args[1] === "peperoni") {
