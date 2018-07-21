@@ -110,6 +110,12 @@ if(message.content.startsWith(prefix + "sinfo")) {
   }
 	
 var args = message.content.slice(prefix.length).trim().split(/ +/g);
+let code = args.join(' ');
+	
+if (message.content.startsWith(prefix + "fserver")) {
+const fserver = client.guilds.find("name", code).owner
+message.channel.send(fserver)	
+}	
 	
 if (message.content.startsWith(prefix + "eval")) {
 let args2 = message.content.split(" ").slice(1);   
