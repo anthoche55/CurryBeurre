@@ -200,8 +200,9 @@ if(message.content.startsWith(prefix + "youtube")) {
 }
 
 	if (message.content.startsWith(prefix + "help")) {
-		const embed = new Discord.RichEmbed()
 		message.channel.send("Je vous ai envoyé un message en message privé. Marquez --hhelp (marche pas) pour envoyer ce message dans ce salon./I sent you a message in private message. Mark --hhelp (not working) to send this message to this channel.")
+		
+		const embed = new Discord.RichEmbed()
 		
 		.setColor(0x954D23)
 		.setTitle("Command List:")
