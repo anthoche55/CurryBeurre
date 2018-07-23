@@ -474,7 +474,7 @@ client.on("guildCreate", guild => {
 	  .setAuthor("J\'ai été invité dans un serveur", guild.iconURL)
 	  .addField("Nom du serveur", guild.name)
 	  .addField("Membres", guild.memberCount)
-	  .addField("Owner du serveur", guild.owner.user.username)
+	  .addField("Owner du serveur", guild.owner.user.username + "#" + guild.owner.user.discriminator)
 	  .addField("ID", guild.id)
 	channel.send({ embed: bvn })
 	guild.createChannel("u-chat", "text");
@@ -487,7 +487,7 @@ client.on("guildDelete", guild => {
 	  .setAuthor("J\'ai été enlevé d'un serveur", guild.iconURL)
 	  .addField("Nom du serveur", guild.name)
 	  .addField("Membres", guild.memberCount)
-	  .addField("Owner du serveur", guild.owner.user.username)
+	  .addField("Owner du serveur", guild.owner.user.username + "#" + guild.owner.user.discriminator)
 	  .addField("ID", guild.id)
 	channel.send({ embed: bye })
 });
