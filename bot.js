@@ -36,10 +36,6 @@ const uptime1 = new Discord.RichEmbed()
 	.setTitle("Uptime du bot")
 	.setDescription(uptime)
 
-if(message.content.startsWith(prefix + "uptime")) {
-	message.channel.send(uptime1)
-}
-	
 	
 if(message.content.startsWith(prefix + "slist")) {
 	const embed = new Discord.RichEmbed()
@@ -206,6 +202,7 @@ if(message.content.startsWith(prefix + "youtube")) {
 		
 		.setColor(0x954D23)
 		.setTitle("Command List:")
+		.setDescription("Nouvelle commande de help va être ajoutée avec des catégories/New help command will be maked with categories")
 		.addField("&help", "Cette commande/this command")
 		.addField("&blague", "Raconter une blague/Tell you a joke")
 		.addField("&heure", "Donner l'heure actuelle/Gives you the time")
@@ -218,6 +215,7 @@ if(message.content.startsWith(prefix + "youtube")) {
 		.addField("&sinfo", "Information sur le serveur/Information about the server")
 		.addField("&botstats", "Information sur le bot/Information about the bot")
 		.addField("&avatar", "Afficher l'avatar de vous ou quelqu'un d'autre/View the avatar of you or someone else")
+		.addFieldl"&slist", "Donne une liste avec tous les serveurs ayant le bot/Showing a list with servers that having the bot")
 
 		message.author.send({ embed: embed })
 	}
