@@ -112,11 +112,6 @@ if(message.content.startsWith(prefix + "sinfo")) {
 var args = message.content.slice(prefix.length).trim().split(/ +/g);
 let code = args.join(' ');
 	
-if (message.content.startsWith(prefix + "fserver")) {
-const fserver = client.guilds.find("name", code).owner
-message.channel.send(fserver)	
-}	
-	
 if (message.content.startsWith(prefix + "eval")) {
 let args2 = message.content.split(" ").slice(1);   
 let code = args2.join(' ');
@@ -220,18 +215,18 @@ if(message.content.startsWith(prefix + "youtube")) {
 		const embed = new Discord.RichEmbed()
 		.setColor(0x954D23)
 		.setTitle("Command List:")
-		.addField("cb!help", "Cette commande/this command")
-		.addField("cb!blague", "Raconter une blague/Tell you a joke")
-		.addField("cb!heure", "Donner l'heure actuelle/Gives you the time")
-		.addField("cb!google", "Cherche votre argument sur Google/Search your argument on Google")
-		.addField("cb!youtube", "Chercher votre argument sur YouTube/Search your argument on Youtube")
-		.addField("cb!chat", "Chatter avec d'autres serveurs/Chat with other servers that have the bot")
-		.addField("cb!meow", "Images de chats au hasard/Random pictures of cats")
-		.addField("cb!4k", "IMPORTANT : CONTENUE PORNOGRAPHIQUE PAS ENDESSOUS DE 18 ANS/IMPORTANT : PORNO NOT UNDER 18 YEARS")
-		.addField("cb!8ball", "Vous posez une question en argument et le bot vous répond par oui;non;autres/Question the bot as argument and the bot will answer with yes;no;others")
-		.addField("cb!sinfo", "Information sur le serveur/Information about the server")
-		.addField("cb!botstats", "Information sur le bot/Information about the bot")
-		.addField("cb!avatar", "Afficher l'avatar de vous ou quelqu'un d'autre/View the avatar of you or someone else")
+		.addField("&help", "Cette commande/this command")
+		.addField("&blague", "Raconter une blague/Tell you a joke")
+		.addField("&heure", "Donner l'heure actuelle/Gives you the time")
+		.addField("&google", "Cherche votre argument sur Google/Search your argument on Google")
+		.addField("&youtube", "Chercher votre argument sur YouTube/Search your argument on Youtube")
+		.addField("&chat", "Chatter avec d'autres serveurs/Chat with other servers that have the bot")
+		.addField("&meow", "Images de chats au hasard/Random pictures of cats")
+		.addField("&4k", "IMPORTANT : CONTENUE PORNOGRAPHIQUE PAS ENDESSOUS DE 18 ANS/IMPORTANT : PORNO NOT UNDER 18 YEARS")
+		.addField("&8ball", "Vous posez une question en argument et le bot vous répond par oui;non;autres/Question the bot as argument and the bot will answer with yes;no;others")
+		.addField("&sinfo", "Information sur le serveur/Information about the server")
+		.addField("&botstats", "Information sur le bot/Information about the bot")
+		.addField("&avatar", "Afficher l'avatar de vous ou quelqu'un d'autre/View the avatar of you or someone else")
 
 		message.channel.send({ embed: embed })
 	}
@@ -483,7 +478,7 @@ if(message.content.startsWith(prefix + "mute")) {
 });	
 	
 client.on("guildCreate", guild => {
-	guild.owner.send("Bonjour/bonsoir, je suis Curry Beurre, merci de m'avoir ajouté à votre serveur ! J'ai créé le salon \"u-chat\" pour la commande \"cb!chat\", merci et bon amusement !");
+	guild.owner.send("Bonjour/bonsoir, je suis Curry Beurre, merci de m'avoir ajouté à votre serveur ! J'ai créé le salon \"u-chat\" pour la commande \"&chat\", merci et bon amusement !");
 	var channel = client.channels.get('458998871675109387');
 	const bvn = new Discord.RichEmbed()
 	  .setColor("0x41f441")
@@ -492,12 +487,6 @@ client.on("guildCreate", guild => {
 	  .addField("Membres", guild.memberCount)
 	  .addField("Owner du serveur", guild.owner)
 	  .addField("ID", guild.id)
-	client.user.setPresence({
-		game: {
-		  name: `cb!help | ${client.guilds.size} serveurs`,
-		  type: 0
-		}
-	});
 	channel.send({ embed: bvn })
 	guild.createChannel("u-chat", "text");
 });
@@ -511,12 +500,6 @@ client.on("guildDelete", guild => {
 	  .addField("Membres", guild.memberCount)
 	  .addField("Owner du serveur", guild.owner)
 	  .addField("ID", guild.id)
-	client.user.setPresence({
-		game: {
-		  name: `cb!help | ${client.guilds.size} serveurs`,
-		  type: 0
-		}
-	});
 	channel.send({ embed: bye })
 });
 
