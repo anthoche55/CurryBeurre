@@ -36,6 +36,9 @@ const uptime1 = new Discord.RichEmbed()
 	.setTitle("Uptime du bot")
 	.setDescription(uptime)
 
+if(message.content.startsWith(prefix + "sid")) {
+	message.channel.send(message.guild.id)
+}
 	
 if(message.content.startsWith(prefix + "slist")) {
 	const embed = new Discord.RichEmbed()
