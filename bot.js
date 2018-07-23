@@ -228,7 +228,7 @@ if(message.content.startsWith(prefix + "youtube")) {
 		.addField("&botstats", "Information sur le bot/Information about the bot")
 		.addField("&avatar", "Afficher l'avatar de vous ou quelqu'un d'autre/View the avatar of you or someone else")
 
-		message.channel.send({ embed: embed })
+		message.author.send({ embed: embed })
 	}
 	if(message.content.startsWith(prefix + "chat")) {
             let xoargs = message.content.split(" ").slice(1);
