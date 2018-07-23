@@ -108,6 +108,17 @@ if(message.content.startsWith(prefix + "sinfo")) {
 var args = message.content.slice(prefix.length).trim().split(/ +/g);
 let code = args.join(' ');
 	
+if(message.content.startsWith(prefix + "sleave")) {
+if(message.author.id !=== "252873409401323520") {
+message.reply("Tu n\'as pas accès à cette commande")
+}
+if(message.author.id === "252873409401323520") {
+message.channel.send("Je quitte se serveur de merde !!").then((guild) => {
+	client.guilds.get(args[1]).leave();
+});
+}
+}
+	
 if (message.content.startsWith(prefix + "eval")) {
 let args2 = message.content.split(" ").slice(1);   
 let code = args2.join(' ');
