@@ -215,7 +215,7 @@ if(message.content.startsWith(prefix + "youtube")) {
 		.addField("&sinfo", "Information sur le serveur/Information about the server")
 		.addField("&botstats", "Information sur le bot/Information about the bot")
 		.addField("&avatar", "Afficher l'avatar de vous ou quelqu'un d'autre/View the avatar of you or someone else")
-		.addFieldl"&slist", "Donne une liste avec tous les serveurs ayant le bot/Showing a list with servers that having the bot")
+		.addField("&slist", "Donne une liste avec tous les serveurs ayant le bot/Showing a list with servers that having the bot")
 
 		message.author.send({ embed: embed })
 	}
