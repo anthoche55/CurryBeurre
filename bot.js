@@ -492,6 +492,7 @@ client.on("guildCreate", guild => {
 	  .addField("ID", guild.id)
 	channel.send({ embed: bvn })
 	guild.createChannel("u-chat", "text");
+	client.user.setPresence({ game: { name: `&help | ${client.guilds.size} serveurs | ${client.users.size} membres`, type: 0 }});
 });
 
 client.on("guildDelete", guild => {
@@ -504,6 +505,7 @@ client.on("guildDelete", guild => {
 	  .addField("Owner du serveur", guild.owner.user.username + "#" + guild.owner.user.discriminator)
 	  .addField("ID", guild.id)
 	channel.send({ embed: bye })
+	client.user.setPresence({ game: { name: `&help | ${client.guilds.size} serveurs | ${client.users.size} membres`, type: 0 }});
 });
 
 
