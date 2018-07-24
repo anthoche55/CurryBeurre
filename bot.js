@@ -209,7 +209,6 @@ if(message.content.startsWith(prefix + "youtube")) {
     let link = `https://www.youtube.com/results?search_query=` + youtube;
 	message.channel.send(link);
 }
-
 	if (message.content.startsWith(prefix + "help")) {
 		message.channel.send("Je vous ai envoyé un message en message privé. Marquez --hhelp (marche pas) pour envoyer ce message dans ce salon./I sent you a message in private message. Mark --hhelp (not working) to send this message to this channel.")
 		
@@ -217,23 +216,10 @@ if(message.content.startsWith(prefix + "youtube")) {
 		
 		.setColor(0x954D23)
 		.setTitle("Command List:")
-		.setDescription("Nouvelle commande de help va être ajoutée avec des catégories/New help command will be maked with categories")
-		.addField("&help", "Cette commande/this command")
-		.addField("&blague", "Raconter une blague/Tell you a joke")
-		.addField("&heure", "Donner l'heure actuelle/Gives you the time")
-		.addField("&google", "Cherche votre argument sur Google/Search your argument on Google")
-		.addField("&youtube", "Chercher votre argument sur YouTube/Search your argument on Youtube")
-		.addField("&chat", "Chatter avec d'autres serveurs/Chat with other servers that have the bot")
-		.addField("&meow", "Images de chats au hasard/Random pictures of cats")
-		.addField("&4k", "IMPORTANT : CONTENUE PORNOGRAPHIQUE PAS ENDESSOUS DE 18 ANS/IMPORTANT : PORNO NOT UNDER 18 YEARS")
-		.addField("&8ball", "Vous posez une question en argument et le bot vous répond par oui;non;autres/Question the bot as argument and the bot will answer with yes;no;others")
-		.addField("&sinfo", "Information sur le serveur/Information about the server")
-		.addField("&botstats", "Information sur le bot/Information about the bot")
-		.addField("&avatar", "Afficher l'avatar de vous ou quelqu'un d'autre/View the avatar of you or someone else")
-		.addField("&slist", "Donne une liste avec tous les serveurs ayant le bot/Showing a list with servers that having the bot")
-
+		.setDescription("&help\n&blague\n&heure\n&google\n&youtube\n&chat\n&meow\n&4k\n&8ball\n&sinfo\n&botstats\n&avatar\n&slist")
 		message.author.send({ embed: embed })
 	}
+
 	if(message.content.startsWith(prefix + "chat")) {
             let xoargs = message.content.split(" ").slice(1);
             let xo03 = xoargs.join(" ")
