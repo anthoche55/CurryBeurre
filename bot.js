@@ -364,7 +364,7 @@ if(message.content.startsWith(prefix + "8ball")) {
 	
 if(message.content.startsWith(prefix + "botstats")) {
     let servers = client.guilds.size;
-    let users = 0;
+    let users = client.users.size;
     let channels = client.channels.size;
     
     client.guilds.map(g => users += g.memberCount);
