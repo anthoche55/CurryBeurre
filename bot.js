@@ -5,6 +5,7 @@ const bot = new Discord.Client();
 const { get } = require("snekfetch"); 
 const randomPuppy = require('random-puppy');
 const embedcolor = 0xe54242;
+const hexcols = 0xe54242;
 var util = require('util')
 var utils = require('bot-utils')
 const ms = require("ms");
@@ -62,7 +63,7 @@ var answers = [
 	
 	if(message.content.startsWith(prefix + "restart")) {
 	if(message.author.id !== "252873409401323520") return
-                message.react('?')
+                message.reply("Le bot va redémarrer")
                     .then(message => client.destroy())
                     .then(() => client.login(process.env.BOT_TOKEN));
 }
