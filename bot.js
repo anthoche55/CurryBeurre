@@ -76,6 +76,16 @@ if(message.content.startsWith(prefix + "invite")) {
 	message.channel.send({ embed: embed })
 }
 
+if(message.content.startsWith(prefix + "ron")) {
+	if(message.guild !== "456852882571001868") return message.reply("Cette commande est privée")
+		if(message.author.id == "252873409401323520") {
+		const embed = new Discord.RichEmbed()
+		  .setTitle("Recrutements [ON]")
+		  .setDescription("Nous recrutons des modérateurs\n	- Âge ?\n	- Depuis quand êtes vous arrivés sur ce serveur ?\n	- Pourquoi sur ce serveur ?\n	- Pourquoi vous et pas un autre ?\n	- Quelles sont vos qualités ?\n	- Ne pas faire de fautes d'orthographe\n- Preuves que vous savez comment modérer");
+		message.channel.send(embed)
+		}
+}
+		
 
 if(message.content.startsWith(prefix + "blague")) {
 	const embed = new Discord.RichEmbed()
