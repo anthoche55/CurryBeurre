@@ -77,7 +77,7 @@ if(message.content.startsWith(prefix + "invite")) {
 }
 
 if(message.content.startsWith(prefix + "ron")) {
-	if(message.guild !== "456852882571001868") return message.reply("Cette commande est privée")
+	if(message.guild.id !== "456852882571001868") return message.reply("Cette commande est privée")
 		if(message.author.id == "252873409401323520") {
 		const embed = new Discord.RichEmbed()
 		  .setTitle("Recrutements [ON]")
