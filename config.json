@@ -1,9 +1,9 @@
 {
   "prefix" : "cb!",
   "servers": [
-		"ID 1ST SERVER"
+		"456852882571001868"
 	],
-	"roleName": "THE ROLE NAME YOU WANT TO CHANGE ITS COLOR FROM HERE",
+	"roleName": "rainbow",
 	"colors": 12,
 	"speed": 60000,
 	"logging": true
