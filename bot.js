@@ -22,6 +22,7 @@ if(message.content.startsWith(prefix + "ron")) {
 		  .setDescription("Nous recrutons des modérateurs\n	- Âge ?\n	- Depuis quand êtes vous arrivés sur ce serveur ?\n	- Pourquoi sur ce serveur ?\n	- Pourquoi vous et pas un autre ?\n	- Quelles sont vos qualités ?\n	- Ne pas faire de fautes d'orthographe\n- Preuves que vous savez comment modérer");
 		message.channel.send("@everyone")
 		message.channel.send(embed)
+		message.delete()
 		}
 }
 	
