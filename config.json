@@ -1,3 +1,10 @@
 {
-  "prefix" : "cb!"
+  "prefix" : "cb!",
+  "servers": [
+		"ID 1ST SERVER"
+	],
+	"roleName": "THE ROLE NAME YOU WANT TO CHANGE ITS COLOR FROM HERE",
+	"colors": 12,
+	"speed": 60000,
+	"logging": true
 }
