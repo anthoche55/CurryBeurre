@@ -32,8 +32,16 @@ let code = args.join(' ');
 
 client.on("guildMemberAdd", (member) => {
   const embed = new Discord.RichEmbed()
+    .setColor(0x42f450)
     .addField(member.user.username, "a rejoint le serveur")
     .setFooter("Bienvenue " + member.user.tag)
+  client.channels.get("468457996607815691").send(embed);
+});
+client.on("guildMemberRemove", (member) => {
+  const embed = new Discord.RichEmbed()
+    .setColor(0xf44141)
+    .addField(member.user.username, "a quitté le serveur")
+    .setFooter("Au revoir " + member.user.tag)
   client.channels.get("468457996607815691").send(embed);
 });
 
