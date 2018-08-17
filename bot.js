@@ -82,14 +82,14 @@ client.on("guildMemberAdd", (member) => {
     .setColor(0x42f450)
     .addField(member.user.username, "a rejoint le serveur")
     .setFooter("Bienvenue " + member.user.tag)
-  client.channels.get("468457996607815691").send(embed);
+  member.guild.channels.find("name", "bienvenue-aurevoir").send(embed);
 });
 client.on("guildMemberRemove", (member) => {
   const embed = new Discord.RichEmbed()
     .setColor(0xf44141)
     .addField(member.user.username, "a quitté le serveur")
     .setFooter("Au revoir " + member.user.tag)
-  client.channels.get("468457996607815691").send(embed);
+  member.guild.channels.find("name", "bienvenue-aurevoir").send(embed);
 });
 
 client.login(process.env.BOT_TOKEN);
