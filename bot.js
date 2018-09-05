@@ -54,14 +54,14 @@ if(message.author.equals(bot.user)) return;
                         if(!longargs){
                             var embed = new Discord.RichEmbed()
                                 .setColor(0xf46842)
-                                .setAuthor("Envoyer une pub", bot.user.displayAvatarUrl)
+                                .setAuthor("Envoyer une pub")
                                 .setDescription(":no_entry_sign: Vous devez envoyer une pub")
                                 .setFooter(bot.user.username+" - by Cecemel_PvP#9876 | Ft. Kalyax#4031")
                             message.channel.sendEmbed(embed);
                         }else{
                             var embed = new Discord.RichEmbed()
                                 .setColor(0xf46842)
-                                .setAuthor(message.author.username+" - "+message.author.id)
+                                .setAuthor(message.author.username+" - "+message.author.id, message.author.avatarURL)
                                 .setDescription(longargs)
                                 .setFooter(bot.user.username+" - by Cecemel_PvP#9876 | Ft. Kalyax#4031")
                                 .setTimestamp()
