@@ -3,13 +3,13 @@ const prefix = "!";
 const client = new Discord.Client();
 const bot = new Discord.Client();
 
+client.on("ready", () => {
+    client.user.setActivity(prefix+"help | "+client.guilds.size+" serveurs | "+client.users.size+" utilisateurs")
+    console.log(client.user.username+" ON!");
+});
+
 client.on("message", async message => {
   
 });
-
-bot.on("ready", () => {
-    bot.user.setActivity(prefix+"help | "+bot.guilds.size+" serveurs | "+bot.users.size+" utilisateurs");
-    console.log(bot.user.username+" ON - by Kalyax#4031");
-})
 
 client.login(process.env.BOT_TOKEN);
