@@ -61,7 +61,7 @@ if(message.author.equals(bot.user)) return;
                         }else{
                             var embed = new Discord.RichEmbed()
                                 .setColor(0xf46842)
-                                .setAuthor(message.author.username+" - "+message.author.id, message.member.displayAvatarUrl)
+                                .setAuthor(message.author.username+" - "+message.author.id)
                                 .setDescription(longargs)
                                 .setFooter(bot.user.username+" - by Cecemel_PvP#9876 | Ft. Kalyax#4031")
                                 .setTimestamp()
