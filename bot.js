@@ -23,7 +23,7 @@ if(message.author.equals(bot.user)) return;
                 message.delete();
                 var embed = new Discord.RichEmbed()
                     .setColor(0xf46842)
-                    .setAuthor("Envoyer une pub", bot.user.displayAvatarUrl)
+                    .setAuthor("Envoyer une pub", bot.user.avatarUrl)
                     .setDescription(":no_entry_sign: Vous devez attendre 1 heure")
                     .setFooter(bot.user.username+" - by Cecemel_PvP#9876 | Ft. Kalyax#4031")
                 message.channel.sendEmbed(embed);
@@ -33,7 +33,7 @@ if(message.author.equals(bot.user)) return;
                     if(message.author.username==="MEE6"){
                         var embed = new Discord.RichEmbed()
                             .setColor(0xf46842)
-                            .setAuthor("Envoyer une pub", bot.user.displayAvatarUrl)
+                            .setAuthor("Envoyer une pub", bot.user.avatarUrl)
                             .setDescription(":no_entry_sign: Vous ne pouvez pas utiliser Mee6 pour faire votre pub")
                             .setFooter(bot.user.username+" - by Cecemel_PvP#9876 | Ft. Kalyax#4031")
                         message.channel.sendEmbed(embed);
@@ -42,7 +42,7 @@ if(message.author.equals(bot.user)) return;
                     if(message.author.id==="274636300332695562"||message.author.id==="347043099010269184"||message.author.id==="317221808405348364"||message.author.id==="394787892351991808"||message.author.id==="296357024864665605"||message.author.id==="398096736880427018"){
                         var embed = new Discord.RichEmbed()
                             .setColor(0xf46842)
-                            .setAuthor("Envoyer une pub", bot.user.displayAvatarUrl)
+                            .setAuthor("Envoyer une pub", bot.user.avatarUrl)
                             .setDescription(":no_entry_sign: Vous êtes banni, pour être débanni, rendez-vous sur le support")
                             .setFooter(bot.user.username+" - by Cecemel_PvP#9876 | Ft. Kalyax#4031")
                         message.channel.sendEmbed(embed);
@@ -77,7 +77,7 @@ if(message.author.equals(bot.user)) return;
                 }else{
                     var embed = new Discord.RichEmbed()
                         .setColor(0xf46842)
-                        .setAuthor("Envoyer une pub", bot.user.displayAvatarUrl)
+                        .setAuthor("Envoyer une pub", bot.user.avatarUrl)
                         .setDescription(":no_entry_sign: Vous devez envoyer cela dans **#fastpub**")
                         .setFooter(bot.user.username+" - by Cecemel_PvP#9876 | Ft. Kalyax#4031")
                     message.channel.sendEmbed(embed);
