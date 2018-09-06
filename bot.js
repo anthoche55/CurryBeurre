@@ -24,23 +24,23 @@ if(message.author.equals(bot.user)) return;
             if(cooldown.has(message.author.id)){
             var embed = new Discord.RichEmbed()
                     .setColor(0xf4bf42)
-                    .setAuthor("Envoyer une pub", bot.user.avatarURL)
+                    .setAuthor("Envoyer une pub")
                     .setDescription(":no_entry_sign: Vous devez attendre 1 heure")
-                    .setFooter(bot.user.username+" - by Cecemel_PvP#9876 | Ft. Kalyax");
+                    .setFooter("By Cecemel_PvP#9876 | Ft. Kalyax");
                 message.channel.sendEmbed(embed);
             } else if(!longargs){
                             var embed = new Discord.RichEmbed()
                                 .setColor(0xf4bf42)
-                                .setAuthor("Envoyer une pub", bot.user.avatarURL)
+                                .setAuthor("Envoyer une pub")
                                 .setDescription(":no_entry_sign: Vous devez envoyer une pub")
-                                .setFooter(bot.user.username+" - by Cecemel_PvP#9876 | Ft. Kalyax")
+                                .setFooter("By Cecemel_PvP#9876 | Ft. Kalyax")
                             message.channel.sendEmbed(embed);
             } else{
                             var embed = new Discord.RichEmbed()
                                 .setColor(0xf4bf42)
                                 .setAuthor(message.author.username+" - "+message.author.id, message.author.avatarURL)
                                 .setDescription(longargs)
-                                .setFooter(bot.user.username+" - by Cecemel_PvP#9876 | Ft. Kalyax")
+                                .setFooter("By Cecemel_PvP#9876 | Ft. Kalyax")
                                 .setTimestamp()
                             bot.channels.findAll("name", "pub").map(channel => channel.send(embed))
 
