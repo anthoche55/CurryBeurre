@@ -47,7 +47,7 @@ if(message.author.equals(bot.user)) return;
                                 .setDescription(longargs)
                                 .setFooter("By Cecemel_PvP#9876 | Ft. Kalyax")
                                 .setTimestamp()
-                            bot.channels.filter("name", "pub").map(channel => channel.send({ embed: embed }))
+                            bot.channels.filter("name", "pub")..send({ embed: embed });
 
                             cooldown.add(message.author.id)
 
