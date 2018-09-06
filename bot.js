@@ -27,14 +27,14 @@ if(message.author.equals(bot.user)) return;
                     .setAuthor("Envoyer une pub")
                     .setDescription(":no_entry_sign: Vous devez attendre 1 heure")
                     .setFooter("By Cecemel_PvP#9876 | Ft. Kalyax");
-                message.channel.sendEmbed(embed);
+                message.channel.send({ embed: embed });
             } else if(!longargs){
                             var embed = new Discord.RichEmbed()
                                 .setColor(0xf4bf42)
                                 .setAuthor("Envoyer une pub")
                                 .setDescription(":no_entry_sign: Vous devez envoyer une pub")
                                 .setFooter("By Cecemel_PvP#9876 | Ft. Kalyax")
-                            message.channel.sendEmbed(embed);
+                            message.channel.send({ embed: embed });
             } else{
                             var embed = new Discord.RichEmbed()
                                 .setColor(0xf4bf42)
@@ -42,7 +42,7 @@ if(message.author.equals(bot.user)) return;
                                 .setDescription(longargs)
                                 .setFooter("By Cecemel_PvP#9876 | Ft. Kalyax")
                                 .setTimestamp()
-                            bot.channels.findAll("name", "pub").map(channel => channel.send(embed))
+                            bot.channels.findAll("name", "pub").map(channel => channel.send({ embed: embed }))
 
                             cooldown.add(message.author.id)
 
