@@ -17,46 +17,32 @@ if(message.author.equals(bot.user)) return;
 
     var args = message.content.substring(prefix.length).split(" ");
 
-    switch(args[0].toLowerCase()){
-    case "sendpub":
+    if(message.content.startsWith(prefix + "pub")) {
+        var temp = message.content.split(" ").slice(1);
+        var longargs = temp.join(" ")
+            if(!message.channel.name == "publicité") return message.reply("Tu dois être dans le salon **#publicité**");
             if(cooldown.has(message.author.id)){
-                message.delete();
-                var embed = new Discord.RichEmbed()
-                    .setColor(0xf46842)
-                    .setAuthor("Envoyer une pub")
+            var embed = new Discord.RichEmbed()
+                    .setColor(0xf4bf42)
+                    .setAuthor("Envoyer une pub", bot.user.avatarURL)
                     .setDescription(":no_entry_sign: Vous devez attendre 1 heure")
-                    .setFooter(bot.user.username+" - by Cecemel_PvP#9876 | Ft. Kalyax#4031")
+                    .setFooter(bot.user.username+" - by Cecemel_PvP#9876 | Ft. Kalyax");
                 message.channel.sendEmbed(embed);
-                break;
-            }else{
-                if(message.channel.name === "fastpub"){
-                    if(message.author.id==="274636300332695562"||message.author.id==="347043099010269184"||message.author.id==="317221808405348364"||message.author.id==="394787892351991808"||message.author.id==="296357024864665605"||message.author.id==="398096736880427018"){
-                        var embed = new Discord.RichEmbed()
-                            .setColor(0xf46842)
-                            .setAuthor("Envoyer une pub")
-                            .setDescription(":no_entry_sign: Vous êtes banni, pour être débanni, rendez-vous sur le support")
-                            .setFooter(bot.user.username+" - by Cecemel_PvP#9876 | Ft. Kalyax#4031")
-                        message.channel.sendEmbed(embed);
-                        return;
-                        }
-                        message.delete();
-                        var temp = message.content.split(" ").slice(1);
-                        var longargs = temp.join(" ")
-                        if(!longargs){
+            } else if(!longargs){
                             var embed = new Discord.RichEmbed()
-                                .setColor(0xf46842)
-                                .setAuthor("Envoyer une pub")
+                                .setColor(0xf4bf42)
+                                .setAuthor("Envoyer une pub", bot.user.avatarURL)
                                 .setDescription(":no_entry_sign: Vous devez envoyer une pub")
-                                .setFooter(bot.user.username+" - by Cecemel_PvP#9876 | Ft. Kalyax#4031")
+                                .setFooter(bot.user.username+" - by Cecemel_PvP#9876 | Ft. Kalyax")
                             message.channel.sendEmbed(embed);
-                        }else{
+            } else{
                             var embed = new Discord.RichEmbed()
-                                .setColor(0xf46842)
-                                .setAuthor(message.author.username+" - "+message.author.id)
+                                .setColor(0xf4bf42)
+                                .setAuthor(message.author.username+" - "+message.author.id, message.author.avatarURL)
                                 .setDescription(longargs)
-                                .setFooter(bot.user.username+" - by Cecemel_PvP#9876 | Ft. Kalyax#4031")
+                                .setFooter(bot.user.username+" - by Cecemel_PvP#9876 | Ft. Kalyax")
                                 .setTimestamp()
-                            bot.channels.findAll("name", "fastpub").map(channel => channel.send(embed))
+                            bot.channels.findAll("name", "pub").map(channel => channel.send(embed))
 
                             cooldown.add(message.author.id)
 
@@ -64,17 +50,6 @@ if(message.author.equals(bot.user)) return;
                                 cooldown.delete(message.author.id)
                             }, 3600000)
                         }
-                    break;
-                }else{
-                    var embed = new Discord.RichEmbed()
-                        .setColor(0xf46842)
-                        .setAuthor("Envoyer une pub")
-                        .setDescription(":no_entry_sign: Vous devez envoyer cela dans **#fastpub**")
-                        .setFooter(bot.user.username+" - by Cecemel_PvP#9876 | Ft. Kalyax#4031")
-                    message.channel.sendEmbed(embed);
-                }
-            }
-            break;
             }
 });
 
