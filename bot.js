@@ -17,6 +17,11 @@ if(message.author.equals(bot.user)) return;
 
     var args = message.content.substring(prefix.length).split(" ");
 
+    if(message.content.startsWith(prefix + "remcooldown") {
+       if(!message.author.id == "252873409401323520") return;
+      cooldown.delete(args)
+}
+    
     if(message.content.startsWith(prefix + "pub")) {
         var temp = message.content.split(" ").slice(1);
         var longargs = temp.join(" ")
