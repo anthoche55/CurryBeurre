@@ -22,7 +22,7 @@ if(message.author.equals(bot.user)) return;
 });
 
 bot.on('guildMemberAdd', member => {
-    let channel = member.guild.channels.find('name', 'arrivé-départ');
+    let channel = member.guild.channels.get('479983533142835216');
     let memberavatar = member.user.avatarURL
         if (!channel) return;
         let embed = new Discord.RichEmbed()
@@ -47,7 +47,7 @@ bot.on('guildMemberAdd', member => {
 });
 
 bot.on('guildMemberRemove', member => {
-    let channel = member.guild.channels.find('name', 'arrivé-départ');
+    let channel = member.guild.channels.get('479983533142835216');
     let memberavatar = member.user.avatarURL
         if (!channel) return;
         let embed = new Discord.RichEmbed()
