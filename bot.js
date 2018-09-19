@@ -21,4 +21,51 @@ if(message.author.equals(bot.user)) return;
 
 });
 
+bot.on('guildMemberAdd', member => {
+    let channel = member.guild.channels.find('name', 'arrivé-départ');
+    let memberavatar = member.user.avatarURL
+        if (!channel) return;
+        let embed = new Discord.RichEmbed()
+        .setColor(0x228B22)
+        .setThumbnail(memberavatar)
+        .addField(':bust_in_silhouette: | Pseudo : ', `${member}`)
+        .addField(':microphone2: | Bienvenue!', `Bienvenue sur le serveur, ${member}`)
+        .addField(':id: | User :', "**[" + `${member.id}` + "]**")
+        .addField(':family_mwgb: | Tu es le', `${member.guild.memberCount} membre`)
+        .addField("Mention", `<@` + `${member.id}` + `>`, true)
+        .addField('Serveur', `${member.guild.name}`, true )
+        .setFooter(`**${member.guild.name}**`)
+        .setTimestamp()
+
+        channel.sendEmbed(embed);
+});
+
+bot.on('guildMemberAdd', member => {
+
+    console.log(`${member}`, "has joined" + `${member.guild.name}`)
+
+});
+
+bot.on('guildMemberRemove', member => {
+    let channel = member.guild.channels.find('name', 'arrivé-départ');
+    let memberavatar = member.user.avatarURL
+        if (!channel) return;
+        let embed = new Discord.RichEmbed()
+        .setColor(0xFF0012)
+        .setThumbnail(memberavatar)
+        .addField('Pseudo:', `${member}`)
+        .addField('A quitté le serveur', ';(')
+        .addField('Au revoir', 'Tu vas nous manquer')
+        .addField('Le serveur a', `${member.guild.memberCount}` + " membres")
+        .setFooter(`**${member.guild.name}`)
+        .setTimestamp()
+
+        channel.sendEmbed(embed);
+});
+
+bot.on('guildMemberRemove', member => {
+    console.log(`${member}` + "left" + `${member.guild.name}` + "Sending leave message now")
+    console.log("Leave Message Sent")
+});
+
 client.login(process.env.BOT_TOKEN);
