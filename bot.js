@@ -22,7 +22,7 @@ if(message.author.equals(bot.user)) return;
 });
 
 bot.on('guildMemberAdd', member => {
-    let channel = member.guild.channels.get('479983533142835216');
+    let channel = client.channels.get('479983533142835216');
     let memberavatar = member.user.avatarURL
         if (!channel) return;
         let embed = new Discord.RichEmbed()
@@ -37,17 +37,11 @@ bot.on('guildMemberAdd', member => {
         .setFooter(`**${member.guild.name}**`)
         .setTimestamp()
 
-        channel.sendEmbed(embed);
-});
-
-bot.on('guildMemberAdd', member => {
-
-    console.log(`${member}`, "has joined" + `${member.guild.name}`)
-
+        channel.send({ embed: embed });
 });
 
 bot.on('guildMemberRemove', member => {
-    let channel = member.guild.channels.get('479983533142835216');
+    let channel = client.channels.get('479983533142835216');
     let memberavatar = member.user.avatarURL
         if (!channel) return;
         let embed = new Discord.RichEmbed()
@@ -60,12 +54,7 @@ bot.on('guildMemberRemove', member => {
         .setFooter(`**${member.guild.name}`)
         .setTimestamp()
 
-        channel.sendEmbed(embed);
-});
-
-bot.on('guildMemberRemove', member => {
-    console.log(`${member}` + "left" + `${member.guild.name}` + "Sending leave message now")
-    console.log("Leave Message Sent")
+        channel.sendEmbed({ embed: embed });
 });
 
 client.login(process.env.BOT_TOKEN);
