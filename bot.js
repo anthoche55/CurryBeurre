@@ -39,7 +39,7 @@ client.on('guildMemberRemove', member => {
         .setFooter(`**${member.guild.name}`)
         .setTimestamp()
 
-        channel.sendEmbed({ embed: embed });
+        channel.send({ embed: embed });
 });
 
 client.login(process.env.BOT_TOKEN);
