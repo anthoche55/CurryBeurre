@@ -23,21 +23,7 @@ if(message.author.equals(bot.user)) return;
 
 bot.on('guildMemberAdd', member => {
     let channel = client.channels.get('479983533142835216');
-    let memberavatar = member.user.avatarURL
-        if (!channel) return;
-        let embed = new Discord.RichEmbed()
-        .setColor(0x228B22)
-        .setThumbnail(memberavatar)
-        .addField(':bust_in_silhouette: | Pseudo : ', `${member}`)
-        .addField(':microphone2: | Bienvenue!', `Bienvenue sur le serveur, ${member}`)
-        .addField(':id: | User :', "**[" + `${member.id}` + "]**")
-        .addField(':family_mwgb: | Tu es le', `${member.guild.memberCount} membre`)
-        .addField("Mention", `<@` + `${member.id}` + `>`, true)
-        .addField('Serveur', `${member.guild.name}`, true )
-        .setFooter(`**${member.guild.name}**`)
-        .setTimestamp()
-
-        channel.send({ embed: embed });
+        channel.send("Bienvenue ${member}");
 });
 
 bot.on('guildMemberRemove', member => {
