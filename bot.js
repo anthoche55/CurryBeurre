@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const prefix = "!";
+const prefix = "*";
 const client = new Discord.Client();
 const bot = new Discord.Client();
 const bn = "TenDoXx Bot";
@@ -7,7 +7,7 @@ const bn = "TenDoXx Bot";
 var cooldown = new Set();
 
 client.on("ready", () => {
-    client.user.setActivity(prefix+"help | "+client.guilds.size+" serveurs | "+client.users.size+" utilisateurs")
+    client.user.setActivity(prefix+"help | "+client.users.size+" utilisateurs")
     console.log(client.user.username+" ON!");
 });
 
@@ -22,7 +22,19 @@ if(message.author.equals(bot.user)) return;
 });
 
 client.on('guildMemberAdd', member => {
-        client.channels.get('479983533142835216').send("Bienvenue ${member}");
+    let channel = client.channels.get('479983533142835216');
+    let memberavatar = member.user.avatarURL
+        if (!channel) return;
+        let embed = new Discord.RichEmbed()
+        .setColor(0xFF0012)
+        .setThumbnail(memberavatar)
+        .addField('Pseudo:', `${member.user.username}`)
+        .addField('A rejoin le serveur', ';(')
+        .addField('Bienvenue', '')
+        .addField('Le serveur a', `${member.guild.memberCount}` + " membres")
+        .setFooter(`**${member.guild.name}**`)
+        .setTimestamp()
+        channel.send({ embed: embed });
 });
 
 client.on('guildMemberRemove', member => {
@@ -36,9 +48,8 @@ client.on('guildMemberRemove', member => {
         .addField('A quitté le serveur', ';(')
         .addField('Au revoir', 'Tu vas nous manquer')
         .addField('Le serveur a', `${member.guild.memberCount}` + " membres")
-        .setFooter(`**${member.guild.name}`)
+        .setFooter(`**${member.guild.name}**`)
         .setTimestamp()
-
         channel.send({ embed: embed });
 });
 
