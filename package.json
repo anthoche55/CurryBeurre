@@ -1,7 +1,7 @@
 {
-  "name": "GoogleHomeFR",
-  "description": "GoogleHomeFR",
-  "version": "0.0.1",
+  "name": "TenDoXx",
+  "description": "TenDoXx",
+  "version": "1.2.7",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js"
