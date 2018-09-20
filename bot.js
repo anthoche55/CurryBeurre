@@ -21,12 +21,11 @@ if(message.author.equals(bot.user)) return;
 
 });
 
-bot.on('guildMemberAdd', member => {
-    let channel = client.channels.get('479983533142835216');
-        channel.send("Bienvenue ${member}");
+client.on('guildMemberAdd', member => {
+        client.channels.get('479983533142835216').send("Bienvenue ${member}");
 });
 
-bot.on('guildMemberRemove', member => {
+client.on('guildMemberRemove', member => {
     let channel = client.channels.get('479983533142835216');
     let memberavatar = member.user.avatarURL
         if (!channel) return;
