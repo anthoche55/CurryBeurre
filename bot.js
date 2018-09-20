@@ -11,6 +11,10 @@ client.on("ready", () => {
     console.log(client.user.username+" ON!");
 });
 
+client.on("error", (e) => console.error(e));
+client.on("warn", (e) => console.warn(e));
+client.on("debug", (e) => console.info(e));
+
 client.on("message", async message => {
 if(message.author.equals(bot.user)) return;
     if(!message.content.startsWith(prefix)) return;
