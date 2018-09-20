@@ -26,7 +26,7 @@ client.on('guildMemberAdd', member => {
     let memberavatar = member.user.avatarURL
         if (!channel) return;
         let embed = new Discord.RichEmbed()
-        .setColor(0xFF0012)
+        .setColor(0x228B22)
         .setThumbnail(memberavatar)
         .addField('Pseudo:', `${member.user.username}`)
         .addField('A rejoin le serveur', ';(')
