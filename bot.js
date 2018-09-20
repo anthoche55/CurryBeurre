@@ -30,9 +30,9 @@ client.on('guildMemberAdd', member => {
         .setThumbnail(memberavatar)
         .addField('Pseudo:', `${member.user.username}`)
         .addField('A rejoin le serveur', ';(')
-        .addField('Bienvenue', '')
+        .addField('Bienvenue', 'Bienvenue sur le serveur')
         .addField('Le serveur a', `${member.guild.memberCount}` + " membres")
-        .setFooter(`**${member.guild.name}**`)
+        .setFooter(`${member.guild.name}`)
         .setTimestamp()
         channel.send({ embed: embed });
 });
@@ -48,7 +48,7 @@ client.on('guildMemberRemove', member => {
         .addField('A quitté le serveur', ';(')
         .addField('Au revoir', 'Tu vas nous manquer')
         .addField('Le serveur a', `${member.guild.memberCount}` + " membres")
-        .setFooter(`**${member.guild.name}**`)
+        .setFooter(`${member.guild.name}`)
         .setTimestamp()
         channel.send({ embed: embed });
 });
