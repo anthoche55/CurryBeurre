@@ -33,7 +33,7 @@ client.on('guildMemberAdd', member => {
         .setColor(0x228B22)
         .setThumbnail(memberavatar)
         .addField('Pseudo:', `${member.user.username}`)
-        .addField('A rejoin le serveur', ';(')
+        .addField('A rejoin le serveur', ':)')
         .addField('Bienvenue', 'Bienvenue sur le serveur')
         .addField('Le serveur a', `${member.guild.memberCount}` + " membres")
         .setFooter(`${member.guild.name}`)
